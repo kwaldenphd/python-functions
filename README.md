@@ -21,6 +21,8 @@ Elements of this lab procedure were adapted from materials developed by [Lindsay
 
 # Table of Contents
 
+- [Lecture and Live Coding](#lecture-and-live-coding)
+- [Lab Notebook Template](#lab-notebook-template)
 - [Functions](#functions)
   * [Built-In Functions](#built-in-functions)
   * [Named Functions](#named-functions)
@@ -37,7 +39,47 @@ Elements of this lab procedure were adapted from materials developed by [Lindsay
   * [Additional Work With Functions](#additional-work-with-functions)
 - [Lab Notebook Questions](#lab-notebook-questions)
 
+[Link to lab procedure as a Jupyter Notebook](https://drive.google.com/file/d/1flRQmYhhiPiq3tmyr-aQnLVfX8N4O1Az/view?usp=sharing)
+
+# Lecture and Live Coding
+
+Throughout this lab, you will see a Panopto icon at the start of select sections.
+
+This icon indicates there is lecture/live coding asynchronous content that accompanies this section of the lab. 
+
+You can click the link in the figure caption to access these materials (ND users only).
+
+Example:
+
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+  <td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1d06be1d-ba65-478e-a5ad-ad820162cacf">Lab overview</a></td>
+  </tr>
+  </table>
+  
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=266f95e7-65bd-4718-9a97-ae300135e32a">Lecture/live coding playlist</a></td>
+  </tr>
+  </table>
+
+# Lab Notebook Template
+
+Lab notebook template:
+- [`.py` file](https://drive.google.com/file/d/1y5HuDUvcFGwQIDog-6kqpImPwcm_-YO5/view?usp=sharing)
+- [Jupyter Notebook](https://drive.google.com/file/d/1uJi6ehVbYOPtU1zAYa7jNuznMlizrFq5/view?usp=sharing)
+
+
 # Functions
+
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+  <td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1d06be1d-ba65-478e-a5ad-ad820162cacf">Lab overview</a></td>
+  </tr>
+  </table>
 
 1. In Python, a function is a named sequence of statements that performs a computation.
 - Key term: *function*
@@ -356,6 +398,10 @@ Q13: Why would we use functions, or what is the value of functions?
 Q14: Include a link to your Replit workspace for this lab.
 
 # Lab Notebook Questions
+
+Lab notebook template:
+- [`.py` file](https://drive.google.com/file/d/1y5HuDUvcFGwQIDog-6kqpImPwcm_-YO5/view?usp=sharing)
+- [Jupyter Notebook](https://drive.google.com/file/d/1uJi6ehVbYOPtU1zAYa7jNuznMlizrFq5/view?usp=sharing)
 
 Q1: Describe how you would start building out code to accomplish this task? What functions, statements, or keywords would you need to use? How would you start to organize this program?
 
