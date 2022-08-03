@@ -61,7 +61,7 @@ Example:
 <table>
  <tr><td>
 <img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
-<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=266f95e7-65bd-4718-9a97-ae300135e32a">Lecture/live coding playlist</a></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=2da7d03c-171e-448b-8a56-ae30013636fe">Lecture/live coding playlist</a></td>
   </tr>
   </table>
 
@@ -78,6 +78,13 @@ Lab notebook template:
  <tr><td>
 <img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
   <td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1d06be1d-ba65-478e-a5ad-ad820162cacf">Lab overview</a></td>
+  </tr>
+  </table>
+
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+  <td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=728d3882-73f5-43d9-9cc5-ad8201622f3e">Lecture/live coding</a></td>
   </tr>
   </table>
 
