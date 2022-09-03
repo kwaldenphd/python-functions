@@ -27,13 +27,31 @@ ACKNOWLEDGEMENTS
 - What these are/how they work generally
 - Deep dive on `print()` where it shows up in the documentation, how Python interacts with/access it here
 
+## Comprehension Check
+
+## Application
+
+
+
 # Code Reuse and Modularity
 
-MODULES/FUNCTIONS/LIBRARIES/PACKAGES DETOIR
+MODULES/FUNCTIONS/LIBRARIES/PACKAGES DETOUR
+
+## Comprehension Check
+
+## Application
+
+
 
 # Creating Name Functions
 
 - Core syntax, examples
+
+## Comprehension Check
+
+## Application
+
+
 
 # Additional Considerations
 
@@ -41,5 +59,11 @@ MODULES/FUNCTIONS/LIBRARIES/PACKAGES DETOIR
 - Parameters
 - Scoping
 - Docstrings/documentation
+
+## Comprehension Check
+
+## Application
+
+# Putting It All Together
 
 # Lab Notebook Questions
