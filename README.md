@@ -12,6 +12,12 @@ ACKNOWLEDGEMENTS
 - [Lab Notebook Template](#lab-notebook-template)
 
 
+# Lecture & Live Coding
+
+# Key Terms
+
+# Lab Notebook Template
+
 # BIG PICTURE PSEUDOCODE OVERVIEW
 
 
