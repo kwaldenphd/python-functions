@@ -76,135 +76,6 @@ From Busbee and Braunschweig's "[Modular Programming](https://press.rebus.commun
 
 Code blocks are one way to think about these discrete parts of a program. A more precise term used in programming languages is **function.** "Functions are important because they allow us to take large complicated programs and to divide them into smaller manageable pieces. Because the function is a smaller piece of the overall program, we can concentrate on what we want it to do and test it to make sure it works properly" (Busbee and Braunschweig, [Modular Programming](https://press.rebus.community/programmingfundamentals/chapter/modular-programming/)).
 
-### A Python Example
-
-Let's look at a Python example. In a previous lab, we wrote a program that took a temperature in Fahrenheit and converted it to Celsius.
-
-What that program might have looked like:
-```Python
-# input temp
-f = float(input("Enter a temperature in Fahrenheit: "))
-
-# convert to celsius
-c = (f -32) * 5/9
-
-# show output
-print(f"{f} degrees Fahrenheit is equal to {c} degrees celsius")
-```
-
-<blockquote>For more on <code>f strings</code> in Python: https://realpython.com/python-f-strings/</blockquote>
-
-This isn't a terribly long program to write out, but if we need to perform this conversion regularly, we might want to just write it out once and be able use that working code elsewhere in our program.
-
-We can rewrite this program as a function that we can access elsewhere in our program. 
-
-```Python
-# define function
-def tempConvert():
-  fahrenheit = float(input("Enter a temperature in Fahrenheit: ")) # get temperature
-  celsius = (fahrenheit -32) * 5/9 # convert to celsius
-  print(f"{fahrenheit} degrees Fahrenheit is equal to {celsius} degrees celsius") # show output
-```
-
-Then, elsewhere in our program, we could call that function using its name.
-
-```Python
-# sample function call
-tempConvert(32)
-```
-
-In this example, we passed the value `32` to the `tempConvert` function we created. 
-
-## Yet Another Python Example 
-
-But we could break down this program further, thinking about the underlying steps:
-- Get user input for Fahrenheit temperature
-- Convert to celsius
-- Show output
-
-We could create modular pieces for each of these tasks.
-
-```Python
-# function for getting input
-def getFahrenheit():
-  fahrenheit = float(input("Enter a temperature in Fahrenheit: ")) 
-  return fahrenheit
-```
-
-```Python
-# function for converting to Celsius
-def convertTemp(fahrenheit):
-  celsius = (fahrenheit -32) * 5/9
-  return celsius
-```
-
-```Python
-# function for returning output
-def result(fahrenheit, celsius):
-  print(f"{fahrenheit} degrees Fahrenheit is equal to {celsius} degrees celsius")
-```
-
-And we could create a combined function from each of those three individual functions.
-
-```Python
-# combined function
-def combined():
-  fahrenheit = getFahrenheit()
-  celsius = convertTemp(fahrenheit)
-  result(fahrenheit, celsius)
-```
-
-To run our entire temperature conversion program, we would just need to call the `combined()` function using its name.
-
-```Python
-# combined temperature conversion program function call
-combined()
-```
-
-We'll dig into what's happening here in more detail later in this lab. To summarize, we created a function for each piece of our conversion program (`getFahrenheit`, `convertTemp`, `result`), and then created a `main` function that combined those three steps.
-
-Putting that all together:
-
-```Python
-# function for getting input
-def getFahrenheit():
-  fahrenheit = float(input("Enter a temperature in Fahrenheit: ")) 
-  return fahrenheit
-  
-# function for converting to Celsius
-def convertTemp(fahrenheit):
-  celsius = (fahrenheit -32) * 5/9
-  return celsius
-  
-# function for returning output
-def result(fahrenheit, celsius):
-  print(f"{fahrenheit} degrees Fahrenheit is equal to {celsius} degrees celsius")
-  
-# combined function
-def combined():
-  fahrenheit = getFahrenheit()
-  celsius = convertTemp(fahrenheit)
-  result(fahrenheit, celsius)
-  
-# combined temperature conversion program function call
-combined()
-```
-
-## Why Functions
-
-NEW HULK MEME
-
-Using functions to promote modular programming serves a few key purposes:
-- Yields **more concise code*** by eliminating the need to write out code for the same task multiple times
-- Improves **improve code readability**
-- Helps us **more effectively test and debug code**
-  * Because we are creating reusable pieces or building blocks of code, we can more readily pinpoint where things are going wrong or not working in our code.
-- **Promotes code reuse and modularity** by allowing us to define and call functions for common tasks
-
-This may seem overly-complicated for a relatively simple program.
-
-But imagine all kinds of more complex tasks we might want to accomplish in a programming environment- analyzing data, generating visualizations, creating textures, building interaction objects, etc. All of that becomes possible through functions- modular building blocks that can be combined to accomplish more complex tasks.
-
 # Functions in Python
 
 In Python, a function is a named sequence of statements that performs a computation.
@@ -281,7 +152,121 @@ When we call a named function, the program jumps to the definition for the funct
 
 As mentioned earlier, functions are an example of a control structure. Let's look at some examples.
 
-### Named Function Example A
+### Python Example A
+
+Let's look at a Python example. In a previous lab, we wrote a program that took a temperature in Fahrenheit and converted it to Celsius.
+
+What that program might have looked like:
+```Python
+# input temp
+f = float(input("Enter a temperature in Fahrenheit: "))
+
+# convert to celsius
+c = (f -32) * 5/9
+
+# show output
+print(f"{f} degrees Fahrenheit is equal to {c} degrees celsius")
+```
+
+<blockquote>For more on <code>f strings</code> in Python: https://realpython.com/python-f-strings/</blockquote>
+
+This isn't a terribly long program to write out, but if we need to perform this conversion regularly, we might want to just write it out once and be able use that working code elsewhere in our program.
+
+We can rewrite this program as a function that we can access elsewhere in our program. 
+
+```Python
+# define function
+def tempConvert():
+  fahrenheit = float(input("Enter a temperature in Fahrenheit: ")) # get temperature
+  celsius = (fahrenheit -32) * 5/9 # convert to celsius
+  print(f"{fahrenheit} degrees Fahrenheit is equal to {celsius} degrees celsius") # show output
+```
+
+Then, elsewhere in our program, we could call that function using its name.
+
+```Python
+# sample function call
+tempConvert(32)
+```
+
+In this example, we passed the value `32` to the `tempConvert` function we created. 
+
+## Python Example B
+
+But we could break down this program further, thinking about the underlying steps:
+- Get user input for Fahrenheit temperature
+- Convert to celsius
+- Show output
+
+We could create modular pieces for each of these tasks.
+
+```Python
+# function for getting input
+def getFahrenheit():
+  fahrenheit = float(input("Enter a temperature in Fahrenheit: ")) 
+  return fahrenheit
+```
+
+```Python
+# function for converting to Celsius
+def convertTemp(fahrenheit):
+  celsius = (fahrenheit -32) * 5/9
+  return celsius
+```
+
+```Python
+# function for returning output
+def result(fahrenheit, celsius):
+  print(f"{fahrenheit} degrees Fahrenheit is equal to {celsius} degrees celsius")
+```
+
+And we could create a combined function from each of those three individual functions.
+
+```Python
+# combined function
+def combined():
+  fahrenheit = getFahrenheit()
+  celsius = convertTemp(fahrenheit)
+  result(fahrenheit, celsius)
+```
+
+To run our entire temperature conversion program, we would just need to call the `combined()` function using its name.
+
+```Python
+# combined temperature conversion program function call
+combined()
+```
+
+We'll dig into what's happening here in more detail later in this lab. To summarize, we created a function for each piece of our conversion program (`getFahrenheit`, `convertTemp`, `result`), and then created a `main` function that combined those three steps.
+
+Putting that all together:
+
+```Python
+# function for getting input
+def getFahrenheit():
+  fahrenheit = float(input("Enter a temperature in Fahrenheit: ")) 
+  return fahrenheit
+  
+# function for converting to Celsius
+def convertTemp(fahrenheit):
+  celsius = (fahrenheit -32) * 5/9
+  return celsius
+  
+# function for returning output
+def result(fahrenheit, celsius):
+  print(f"{fahrenheit} degrees Fahrenheit is equal to {celsius} degrees celsius")
+  
+# combined function
+def combined():
+  fahrenheit = getFahrenheit()
+  celsius = convertTemp(fahrenheit)
+  result(fahrenheit, celsius)
+  
+# combined temperature conversion program function call
+combined()
+```
+
+### Python Function Example C
 
 Let's say we want to create a function that prints an input string three times. Breaking down the steps of that program:
 - Get input string
@@ -426,7 +411,7 @@ In short, the placeholder variables (or parameters) we use inside the function d
 
 <blockquote><a href="https://www.w3schools.com/python/python_scope.asp">Click here</a> to learn more about scope in Python, via W3Schools.</blockquote>
 
-## Comprehension Check
+#### Comprehension Check
 
 describe process for creating a named function in your own words
 
@@ -436,7 +421,7 @@ argument/parameter/scope in your own words
 
 parameters- given an example, what is the value of x in line 2 vs line 7
 
-## Application
+#### Application
 
 Let's say we want to create a function that prints an input string a specific number of times.
 
@@ -491,7 +476,7 @@ printNTimes()
 
 <blockquote>Q2: MODIFY TO PASS SPECIFIC VALUES TO THE FUNCTION</blockquote>
 
-#### Docstrings
+### Docstrings
 
 We can add comments to a function definition by including a docstring under the function header.
 - Key term: *docstring*
@@ -532,7 +517,7 @@ Multi-line docstrings can be used to provide additional description about the na
 
 <blockquote><a href="https://www.python.org/dev/peps/pep-0257/">Click here</a> to learn more about docstrings in Python, via Python.org documentation.</blockquote>
 
-## Fruitful Versus Void Functions
+### Fruitful Versus Void Functions
 
 Functions that yield a result are considered fruitful. To output a result, a function uses the `return` statement to pass results back to the function call.
 - Key term: *fruitful function(s)*
@@ -540,7 +525,7 @@ Functions that yield a result are considered fruitful. To output a result, a fun
 Functions that perform a computation but do not yield a result are considered void. By default, the return value for void functions is `None`.
 - Key term: *void function(s)*
 
-## Comprehension Check
+#### Comprehension Check
 
 Describe docstrings in your own words
 
@@ -548,7 +533,7 @@ Syntax ID - creating and accessing docstrings
 
 Example function - is it fruitful or is it void
 
-## Application
+#### Application
 
 QX: Write a function is_even that determines whether or not a number n is even. Include code + comments for the function definition as well as a sample function call.
 
@@ -556,9 +541,22 @@ QX: Write a function average that determines the average value of a list. Includ
 
 QX: Write a function uniq that takes a list and returns a new list containing only unique values. Include code + comments for the function definition as well as a sample function call.
 
-# Putting It All Together: Code Reuse & Modularity
+# Putting It All Together: Why Functions?
 
-## A Quick Detour Into Packages, Modules, and Libraries
+NEW HULK MEME
+
+Using functions to promote modular programming serves a few key purposes:
+- Yields **more concise code*** by eliminating the need to write out code for the same task multiple times
+- Improves **improve code readability**
+- Helps us **more effectively test and debug code**
+  * Because we are creating reusable pieces or building blocks of code, we can more readily pinpoint where things are going wrong or not working in our code.
+- **Promotes code reuse and modularity** by allowing us to define and call functions for common tasks
+
+This may seem overly-complicated for a relatively simple program.
+
+But imagine all kinds of more complex tasks we might want to accomplish in a programming environment- analyzing data, generating visualizations, creating textures, building interaction objects, etc. All of that becomes possible through functions- modular building blocks that can be combined to accomplish more complex tasks.
+
+## Code Reuse & Modularity (aka a quick detour into modules, packages, and libraries)
 
 As we move forward in Python, we're going to be encountering the terms `package`, `module`, and `library.` All of these terms refer to external Python programs that we can use in our program without having to recreate the entire original code. We can think of these resources as "expansion packs" for Python that expand or extend the programming language's built-in functionality.
 
@@ -570,7 +568,6 @@ A few preliminary definitions...
 Some modules, packages, and libraries are built-in to Python and require no additional installation. Others have to be installed (typically at the command line, or in the terminal) before you can import and use them in a program.
 
 Built-in functions don't require any extra steps to be able to access them in the programming environment. For example, you can see the source code for the `print()` function, contained in Python's `[bltinmodule.c](https://github.com/python/cpython/blob/main/Python/bltinmodule.c#L1972)` file in the [source code](https://github.com/python/cpython/blob/). But all we have to do is use the function name in our program.
-
 
 GAME PACKAGE FIGURE
 
@@ -593,7 +590,7 @@ For more on modules, packages, and libraries in Python:
 - GeeksForGeeks, "[What is the difference between Python's Module, Package and Library?](https://www.geeksforgeeks.org/what-is-the-difference-between-pythons-module-package-and-library/)" (30 September 2022)
 - John Sturtz, "[Python Modules and Packages - An Introduction](https://realpython.com/python-modules-packages/)" *Real Python*
 
-## Comprehension Check
+### Comprehension Check
 
 relationship of functions and modules
 
@@ -601,7 +598,7 @@ Relationship of modules and packages
 
 how we import specific modules from a package
 
-## Application
+### Application
 
 Pick a specific Python package- what does it do/what is it for
 
@@ -619,5 +616,24 @@ Packages that folks could chose from:
 
 QX: Why would we use functions, value of functions. Relationship to code reuse/modularity.
 
+## How to submit this lab (and show your work)
+
+Moving forward, we'll submit lab notebooks as `.py` files. 
+
+One option is to have a `.py` file that you use to run code and test programs while working through the lab. When ready to submit the lab notebook, you add comments and remove extraneous materials.
+
+Another option is to have an "official" `.py` file that you are using as a lab notebook (separate from your working/testing file). Use comments in Python to note when you are starting a new question (as well as answering a question).
+  * Example: `Lab_Notebook_Walden.py`
+
+What gets submitted as the lab notebook is the `Lab_Notebook_Walden.py` file.
+- When in doubt, use comments
+- Be sure you are using comments to note what question you're responding to
+
 # Lab Notebook Questions
+
+[Click here]() to make a copy of the Replit template for this lab.
+
+Alternatives:
+- [`.py` template]() (Google Drive, ND users)
+- [Jupyter Notebook, `.ipynb`]() (Google Colab, ND users)
 
