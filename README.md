@@ -48,7 +48,7 @@ Definitions and explanations in this lab are adapted from Kenneth Leroy Busbee a
 - [How to submit this lab (and show your work)](#how-to-submit-this-lab-and-show-your-work)
 - [Lab Notebook Questions](#lab-notebook-questions)
 
-[Click here]() to access this lab procedure as a Jupyter Notebook.
+[Click here](https://colab.research.google.com/drive/18YBJg-hvbohdMlfhLVU1TZBHho-YRYqF?usp=sharing) to access this lab procedure as a Jupyter Notebook.
 
 ## Key Concepts
 
@@ -59,7 +59,7 @@ Definitions and explanations in this lab are adapted from Kenneth Leroy Busbee a
 [Click here](https://replit.com/team/eoc-f22/Functions-in-Python) to make a copy of the Replit template for this lab.
 
 Alternatives:
-- [`.py` template]() (Google Drive, ND users)
+- [`.py` template](https://drive.google.com/file/d/1nn0IVlZRSe6oXmhnh5nqNCAKKPQi5t5j/view?usp=sharing) (Google Drive, ND users)
 - [Jupyter Notebook, `.ipynb`](https://colab.research.google.com/drive/1EltssZ7B1PKv8FBQM55yc7AeyDyEi3Ma?usp=sharing) (Google Colab, ND users)
 
 ## How to submit this lab (and show your work)
@@ -674,8 +674,8 @@ What gets submitted as the lab notebook is the `Lab_Notebook_Walden.py` file.
 [Click here](https://replit.com/team/eoc-f22/Functions-in-Python) to make a copy of the Replit template for this lab.
 
 Alternatives:
-- [`.py` template]() (Google Drive, ND users)
-- [Jupyter Notebook, `.ipynb`]() (Google Colab, ND users)
+- [`.py` template](https://drive.google.com/file/d/1nn0IVlZRSe6oXmhnh5nqNCAKKPQi5t5j/view?usp=sharing) (Google Drive, ND users)
+- [Jupyter Notebook, `.ipynb`](https://colab.research.google.com/drive/1EltssZ7B1PKv8FBQM55yc7AeyDyEi3Ma?usp=sharing) (Google Colab, ND users)
 
 Q1A: Describe how you would start building out a program to accomplish this task (print a string a specific number of times)? What functions, statements, or keywords would you need to use? How would you start to organize this program?
 
