@@ -155,10 +155,6 @@ Data, parameters, or arguments can be passed into a function. Functions can also
 
 ## Built-In Functions
 
-- Examples we've already seen (print, type, input)
-- What these are/how they work generally
-- Deep dive on `print()` where it shows up in the documentation, how Python interacts with/access it here
-
 We have actually already been working with a number of Python's built-in functions. These include `print()`, `dict()`, `input()`, `int()`, and `len()`.
 
 We call built-in functions using the function name, followed by parenthesis.
@@ -168,29 +164,300 @@ We call built-in functions using the function name, followed by parenthesis.
 - `int()`
 - `len()`
 
-W
+When we call one of these built-in functions, Python accesses and then executes the funtion's source code stored elsewhere in the Python environment.
+- For example, you can see the source code for the `print()` function, contained in `[bltinmodule.c](https://github.com/python/cpython/blob/main/Python/bltinmodule.c#L1972)` file in Python's [source code](https://github.com/python/cpython/blob/).
+
+Using `print()` as an example:
+- The function definition is contained elsewhere in Python's source code
+- We call the function using its name `print()`
+- We pass some kind of input to the function (i.e. `print("Hello world")`)
+- Some functions have an output or return value
 
 ## Comprehension Check
 
 ## Application
 
 
-# Creating Name Functions
+## Named Functions
 
-- Core syntax, examples
+But Python also lets us to create (and name) our own functions.
+- Key term: *named function(s)*
+
+We can define or name a function using the `def` keyword. A function definition includes a few core components:
+- The name of the new function
+- The list of function arguments
+- The sequence of statements to execute when the function is called
+
+The core syntax for defining your own function:
+
+```Python
+# use def keyword to define function name
+def function_name(argument):
+ statement(s)
+ return result
+```
+
+Let's unpack each of those components.
+- `def function_name()` is the name you are giving to the function you create- this is the header for the function definition.
+  * Function names have many of the same rules as variable names- no spaces or special characters.
+- `argument` is the argument that will be passed to the function.
+  * When we are initially defining the function, the `argument` value is typically a placeholder.
+  * Later in the program when we call the named function, the argument being passed to the function goes in these parenthesis.
+- The nested or indented line `statement(s)` is the body of the function definition. It includes a sequence of statements to execute when the function is called.
+- The nested or indented line `return result` is a placeholder for the function output or endpoint- it is also part of the body of the function definition.
+
+### How Named Functions Work
+
+So what happens when we use the `def` keyword to create a named function?
+
+Programs are always executed sequentially, one statement at a time. Function definitions create new functions, but do not execute the bodies or statements within the functions UNTIL the functions are called.
+
+When we call a named function, the program jumps to the definition for the function being called, executes the function's body, and then returns to the point in the program where the function was called and resumes executing the program.
+
+Let's look at some examples.
+
+### Named Function Example A
+
+Let's say we want to create a function that prints an input string three times. Breaking down the steps of that program:
+- Get input string
+- Print the string (3x)
+
+We might also need some way of tracking how many times we've printed the string so it stops at three.
+
+One way we could approach this would be using a `count` variable and a `while` statement.
+
+```Python
+# assign count to 0
+count = 0
+
+# get input string
+message = input("Type your message here: ")
+
+# while statement
+while count < 3:
+    print(message) # print message
+    count += 1 # reassign count
+```
+
+Thinking through how this program runs:
+- `count` starts at `0` and increases by an increment of `1` each time the code nested under `while` runs
+- The code nested under `while` will keep running until the initial condition (`count < 3`) is no longer true
+
+We can test this program to make sure the output is what we expect. How that we have a program that prints an input string three times, we can create the named function.
+
+```Python
+# function definition
+def printThreeTimes(string):
+```
+
+Then under the `def` keyword will go the lines of code that execute our program.
+
+```Python
+# function definition
+def printThreeTimes():
+    count = 0 # assign count
+    message = input("Type your message here: ") # get input message
+    while count < 3: # while statement
+        print(message) # print message
+        count += 1 # reassign count
+```
+
+Now when we run this block of code, there won't be any output because we are just creating or defining the `printThreeTimes` function. When we need to use the function, we can call it using its name.
+
+```Python
+# sample function call
+printThreeTimes()
+```
+
+Putting that all together:
+    
+```Python
+# function definition
+def printThreeTimes():
+    count = 0 # assign count
+    message = input("Type your message here: ") # get input message
+    while count < 3: # while statement
+        print(message) # print message
+        count += 1 # reassign count
+    
+# function call
+printThreeTimes()
+```
+
+But let's say we don't want to use an `input()` statement as part of the function- what if we wanted to pass a specific value to the function?
+
+First, let's build a program that accomplishes this task.
+
+```Python
+# assign string
+message = "There's no place like home"
+
+# assign count
+count = 0
+
+# while statement
+while count < 3:
+    print(message) # print message
+    count += 1 # reassign count
+```
+
+To create the function:
+
+```Python
+def printThreeTimes(message):
+    count = 0 # assign count
+    while count < 3: # while statement
+        print(message) # print message
+        count += 1 # reassign count
+```
+
+Remember in this scenario, we are going to pass a specific value to the function, rather than asking for an input as part of the function.
+
+So how would we call our modified `printThreeTimes` function? We would pass a string object to the function.
+
+```Python
+# assign string
+message = "There's no place like home"
+
+# function definition
+def printThreeTimes(message):
+    count = 0 # assign count
+    while count < 3: # while statement
+        print(message) # print message
+        count += 1 # reassign count
+
+# function call
+printThreeTimes(message) 
+```
+
+#### Parameters & Scoping
+
+This modified example introduces a couple of key concepts for working with functions:
+- Inside a function, the arguments are assigned to local variables, or placeholder variables. These local variables are called parameters.
+  * Key term: *parameter*
+- The name of the parameter inside the function is separated or isolated from the name outside the function. This separation of namespaces is called scoping.
+  * Key term: *scoping*
+
+An example of scoping:
+
+```Python
+# assign x variable
+x = 1
+
+# function definition
+def print_number(x):
+ print(x)
+ 
+# print x variable
+print(x)
+
+# call named function
+print_number(2)
+```
+
+The value of `x` in the first line of this program has nothing to do with the purpose `x` is serving in the function definition.
+
+In short, the placeholder variables (or parameters) we use inside the function definition are separated or isolated from any instance where a variable or parameter with the same name is used outside the function definition.
+
+<blockquote><a href="https://www.w3schools.com/python/python_scope.asp">Click here</a> to learn more about scope in Python, via W3Schools.</blockquote>
 
 ## Comprehension Check
 
 ## Application
 
+### Named Function Example B
 
+Let's say we want to create a function that prints an input string a specific number of times.
 
-# Additional Considerations
+Breaking down the steps of that program:
+- Get the input string (`message`)
+- Get the number of times (`x`)
+- Print the string `x` number of times
 
-- Fruitful vs void
-- Parameters
-- Scoping
-- Docstrings/documentation
+We might also need some way of tracking how many times we've printed the string so it stops at the specified number.
+
+We can use two input statements to get `message` and `x`. And one way we could approach printing the string `x` number of times would be to use a `count` variable and a `while` statement.
+
+```Python
+# input statement for string
+message = input("Enter your message here: ")
+
+# input statement for number of times
+x = int(input("How many times do you want this statement to print? Enter a number value."))
+
+# assign count
+count = 0
+
+# while statement
+while count < x:
+    print(message) # print message
+    count += 1 # reassign count
+```
+
+Now to create a function using this program.
+
+```Python
+# function definition
+def printNTimes():
+    message = input("Enter your message here: ") # input statement for string
+    x = int(input("How many times do you want this statement to print? Enter a number value.")) # input statement for number of times
+    count = 0 # assign count
+    while count < x: # while statement
+        print(message) # print message
+        count += 1 # reassign count
+
+# function call
+printNTimes()
+```
+
+#### Docstrings
+
+We can add comments to a function definition by including a docstring under the function header.
+- Key term: *docstring*
+
+As we've learned previously, single-line comments in Python are declared using the `#` symbol, and multi-line comments in Python are declared using the <code>'''</code> symbol.
+
+Docstrings are declared using triple single quotes (<code>'''</code>) or triple double quotes (`"""`).
+- Best practice is to start the docstring just below the function header.
+- Another best practice for docstrings is to begin with a capital letter and end with a period.
+- The docstring should briefly describe what the function does.
+
+Let's see this in action with an example from earlier in the lab.
+
+```Python
+# function definition
+def printThreeTimes():
+ '''Prints an input string three times'''
+    count = 0 # assign count
+    message = input("Type your message here: ") # get input message
+    while count < 3: # while statement
+        print(message) # print message
+        count += 1 # reassign count
+```
+
+We have a couple options for accessing the contents of the docstring elesewhere in the program. We can use the `__doc__` method (underscore, underscore, doc, underscore, underscore).
+```Python
+print("Using __doc__:")
+print(printThreeTimes.__doc__)
+```
+
+Or we can use the `help()` function.
+```Python
+print("Using help:")
+help(printThreeTimes)
+```
+
+Multi-line docstrings can be used to provide additional description about the named function, including information about parameters, arguments, and returns.
+
+<blockquote><a href="https://www.python.org/dev/peps/pep-0257/">Click here</a> to learn more about docstrings in Python, via Python.org documentation.</blockquote>
+
+## Fruitful Versus Void Functions
+
+Functions that yield a result are considered fruitful. To output a result, a function uses the `return` statement to pass results back to the function call.
+- Key term: *fruitful function(s)*
+
+Functions that perform a computation but do not yield a result are considered void. By default, the return value for void functions is `None`.
+- Key term: *void function(s)*
 
 ## Comprehension Check
 
@@ -198,7 +465,7 @@ W
 
 # Putting It All Together: Code Reuse & Modularity
 
-#### A Quick Detour Into Packages, Modules, and Libraries
+## A Quick Detour Into Packages, Modules, and Libraries
 
 As we move forward in Python, we're going to be encountering the terms `package`, `module`, and `library.` All of these terms refer to external Python programs that we can use in our program without having to recreate the entire original code. We can think of these resources as "expansion packs" for Python that expand or extend the programming language's built-in functionality.
 
@@ -208,6 +475,9 @@ A few preliminary definitions...
 - A ***library*** includes blocks of code that can be reused within a program. Libraries are a collection of modules that have a much more complex directory/sub-directory/etc structure than packages
 
 Some modules, packages, and libraries are built-in to Python and require no additional installation. Others have to be installed (typically at the command line, or in the terminal) before you can import and use them in a program.
+
+Built-in functions don't require any extra steps to be able to access them in the programming environment. For example, you can see the source code for the `print()` function, contained in Python's `[bltinmodule.c](https://github.com/python/cpython/blob/main/Python/bltinmodule.c#L1972)` file in the [source code](https://github.com/python/cpython/blob/). But all we have to do is use the function name in our program.
+
 
 GAME PACKAGE FIGURE
 
