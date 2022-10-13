@@ -32,6 +32,8 @@ Examples of control structures in Python include:
 - `if-then-else` (syntax: `if`, `else`, `elif`)
 - `while` statements (syntax: `while`)
 
+## Modular Programming & Functions
+
 We've also previously been introduced to the concept of **code blocks**. From Busbee and Braunschweig's "[Code Blocks](https://press.rebus.community/programmingfundamentals/chapter/code-blocks/)" from *Programming Fundamentals*:
 - "A code block, sometimes referred to as a compound statement, is a lexical structure of source code which is grouped together. Blocks consist of one or more declarations and statements. A programming language that permits the creation of blocks, including blocks nested within other blocks, is called a block-structured programming language. Blocks are fundamental to structured programming, where control structures are formed from blocks."
    
@@ -41,6 +43,8 @@ From Busbee and Braunschweig's "[Modular Programming](https://press.rebus.commun
 - "Modular programming is a software design technique that emphasizes separating the functionality of a program into independent, interchangeable modules, such that each contains everything necessary to execute only one aspect of the desired functionality."
 
 Code blocks are one way to think about these discrete parts of a program. A more precise term used in programming languages is **function.** "Functions are important because they allow us to take large complicated programs and to divide them into smaller manageable pieces. Because the function is a smaller piece of the overall program, we can concentrate on what we want it to do and test it to make sure it works properly" (Busbee and Braunschweig, [Modular Programming](https://press.rebus.community/programmingfundamentals/chapter/modular-programming/)).
+
+### A Python Example
 
 Let's look at a Python example. In a previous lab, we wrote a program that took a temperature in Fahrenheit and converted it to Celsius.
 
@@ -123,7 +127,9 @@ To run our entire temperature conversion program, we would just need to call the
 combined()
 ```
 
-We'll dig into what's happening here in more detail later in this lab, but to summarize: 
+We'll dig into what's happening here in more detail later in this lab. To summarize, we created a function for each piece of our conversion program (`getFahrenheit`, `convertTemp`, `result`), and then created a `main` function that combined those three steps.
+
+## Why Functions
 
 NEW HULK MEME
 
@@ -143,13 +149,8 @@ But imagine all kinds of more complex tasks we might want to accomplish in a pro
 In Python, a function is a named sequence of statements that performs a computation.
 - Key term: *function*
 
-To execute a function, we call it by name and pass it an appropriate set of input arguments.
-- Key terms: *function call*, *input argument*
-
-A function takes zero or more arguments as inputs and returns zero or more outputs as a result.
-
-The output or result of a function is called the return value.
-- Key terms: *function output* or *return value*
+To execute a function, we call it by name and pass it an appropriate set of input arguments. A function takes zero or more arguments as inputs and returns zero or more outputs as a result. The output or result of a function is called the return value.
+- Key terms: *function call*, *input argument*, *function output* or *return value*
 
 Data, parameters, or arguments can be passed into a function. Functions can also return data.
 
@@ -175,8 +176,11 @@ Using `print()` as an example:
 
 ## Comprehension Check
 
-## Application
+Describe functions in your own words
 
+Which of following is NOT an example of a built-in function in Python
+
+How a built-in function in Python executes
 
 ## Named Functions
 
@@ -214,7 +218,7 @@ Programs are always executed sequentially, one statement at a time. Function def
 
 When we call a named function, the program jumps to the definition for the function being called, executes the function's body, and then returns to the point in the program where the function was called and resumes executing the program.
 
-Let's look at some examples.
+As mentioned earlier, functions are an example of a control structure. Let's look at some examples.
 
 ### Named Function Example A
 
@@ -363,9 +367,15 @@ In short, the placeholder variables (or parameters) we use inside the function d
 
 ## Comprehension Check
 
-## Application
+describe process for creating a named function in your own words
 
-### Named Function Example B
+how do we call a named function
+
+argument/parameter/scope in your own words
+
+parameters- given an example, what is the value of x in line 2 vs line 7
+
+## Application
 
 Let's say we want to create a function that prints an input string a specific number of times.
 
@@ -375,6 +385,12 @@ Breaking down the steps of that program:
 - Print the string `x` number of times
 
 We might also need some way of tracking how many times we've printed the string so it stops at the specified number.
+
+<blockquote>Q1A: Describe how you would start building out code to accomplish this task? What functions, statements, or keywords would you need to use? How would you start to organize this program?</blockquote>
+
+<blockquote>Q1B: See where you can get with writing this program. What parts of the program were you able to get working? Where did you run into challenges?</blockquote>
+
+Here is one approach to this task:
 
 We can use two input statements to get `message` and `x`. And one way we could approach printing the string `x` number of times would be to use a `count` variable and a `while` statement.
 
@@ -409,6 +425,10 @@ def printNTimes():
 # function call
 printNTimes()
 ```
+
+<blockquote>Q1C: How does the sample program compare to your approach? What was similar? What was different? How are you thinking differently (if at all) about how to approach this type of program?</blockquote>
+
+<blockquote>Q2: MODIFY TO PASS SPECIFIC VALUES TO THE FUNCTION</blockquote>
 
 #### Docstrings
 
@@ -461,7 +481,19 @@ Functions that perform a computation but do not yield a result are considered vo
 
 ## Comprehension Check
 
+Describe docstrings in your own words
+
+Syntax ID - creating and accessing docstrings
+
+Example function - is it fruitful or is it void
+
 ## Application
+
+QX: Write a function is_even that determines whether or not a number n is even. Include code + comments for the function definition as well as a sample function call.
+
+QX: Write a function average that determines the average value of a list. Include code + comments for the function definition as well as a sample function call.
+
+QX: Write a function uniq that takes a list and returns a new list containing only unique values. Include code + comments for the function definition as well as a sample function call.
 
 # Putting It All Together: Code Reuse & Modularity
 
@@ -500,12 +532,31 @@ For more on modules, packages, and libraries in Python:
 - GeeksForGeeks, "[What is the difference between Python's Module, Package and Library?](https://www.geeksforgeeks.org/what-is-the-difference-between-pythons-module-package-and-library/)" (30 September 2022)
 - John Sturtz, "[Python Modules and Packages - An Introduction](https://realpython.com/python-modules-packages/)" *Real Python*
 
-
 ## Comprehension Check
+
+relationship of functions and modules
+
+Relationship of modules and packages
+
+how we import specific modules from a package
 
 ## Application
 
+Pick a specific Python package- what does it do/what is it for
 
+What specific modules does it contain
+
+How would we import it into a program
+
+Write a program that uses functions/arguments from the module
+
+Packages that folks could chose from:
+- Statistics
+- Random
+- If you hate yourself, SportsDB
+
+
+QX: Why would we use functions, value of functions. Relationship to code reuse/modularity.
 
 # Lab Notebook Questions
 
