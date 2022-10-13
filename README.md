@@ -9,13 +9,45 @@
 # Table of Contents
 - [Key Concepts](#key-concepts)
 - [Lab Notebook Template](#lab-notebook-template)
-
+- [Overview](#overview)
+  * [Modular Programming & Functions](#modular-programming--functions)
+    * [A Python Example](#a-python-example)
+    * [Yet Another Python Example](#yet-another-python-example)
+  * [Why Functions](#why-functions)
+- [Functions in Python](#functions-in-python)
+  * [Built-In Functions](#built-in-functions)
+  * [Named Functions](#named-functions)
+  * [Docstrings](#docstrings)
+  * [Fruitful Versus Void Functions](#fruitful-versus-void-functions)
 - [How to submit this lab (and show your work)](#how-to-submit-this-lab-and-show-your-work)
 - [Lab Notebook Questions](#lab-notebook-questions)
 
-## Key Contents
+[Click here]() to access this lab procedure as a Jupyter Notebook.
+
+## Key Concepts
+
+[Click here]() for a full list of key concepts and definitions from this lab.
 
 ## Lab Notebook Template
+
+[Click here]() to make a copy of the Replit template for this lab.
+
+Alternatives:
+- [`.py` template]() (Google Drive, ND users)
+- [Jupyter Notebook, `.ipynb`]() (Google Colab, ND users)
+
+## How to submit this lab (and show your work)
+
+Moving forward, we'll submit lab notebooks as `.py` files. 
+
+One option is to have a `.py` file that you use to run code and test programs while working through the lab. When ready to submit the lab notebook, you add comments and remove extraneous materials.
+
+Another option is to have an "official" `.py` file that you are using as a lab notebook (separate from your working/testing file). Use comments in Python to note when you are starting a new question (as well as answering a question).
+  * Example: `Lab_Notebook_Walden.py`
+
+What gets submitted as the lab notebook is the `Lab_Notebook_Walden.py` file.
+- When in doubt, use comments
+- Be sure you are using comments to note what question you're responding to
 
 # Overview
 
@@ -83,6 +115,8 @@ tempConvert(32)
 
 In this example, we passed the value `32` to the `tempConvert` function we created. 
 
+## Yet Another Python Example 
+
 But we could break down this program further, thinking about the underlying steps:
 - Get user input for Fahrenheit temperature
 - Convert to celsius
@@ -128,6 +162,33 @@ combined()
 ```
 
 We'll dig into what's happening here in more detail later in this lab. To summarize, we created a function for each piece of our conversion program (`getFahrenheit`, `convertTemp`, `result`), and then created a `main` function that combined those three steps.
+
+Putting that all together:
+
+```Python
+# function for getting input
+def getFahrenheit():
+  fahrenheit = float(input("Enter a temperature in Fahrenheit: ")) 
+  return fahrenheit
+  
+# function for converting to Celsius
+def convertTemp(fahrenheit):
+  celsius = (fahrenheit -32) * 5/9
+  return celsius
+  
+# function for returning output
+def result(fahrenheit, celsius):
+  print(f"{fahrenheit} degrees Fahrenheit is equal to {celsius} degrees celsius")
+  
+# combined function
+def combined():
+  fahrenheit = getFahrenheit()
+  celsius = convertTemp(fahrenheit)
+  result(fahrenheit, celsius)
+  
+# combined temperature conversion program function call
+combined()
+```
 
 ## Why Functions
 
