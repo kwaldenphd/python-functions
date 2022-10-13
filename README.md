@@ -4,6 +4,13 @@
 
 ## Lab Overview & Goals
 
+This lab provides an overview of foundational programming concepts in the areas of control flow and functions, with a focus on Python syntax. Topics covered include:
+- Control flow and control structures
+- Code modularity and reuse
+- Built-in functions in Python
+- Named functions in Python
+- Core function components, including definition, arguments, parameters, scoping, and docstrings
+
 ## Acknowledgements
 
 When building this lab, the author consulted materials developed by:
@@ -45,15 +52,15 @@ Definitions and explanations in this lab are adapted from Kenneth Leroy Busbee a
 
 ## Key Concepts
 
-[Click here]https://github.com/kwaldenphd/python-functions/blob/main/key-concepts.md() for a full list of key concepts and definitions from this lab.
+[Click here](https://github.com/kwaldenphd/python-functions/blob/main/key-concepts.md) for a full list of key concepts and definitions from this lab.
 
 ## Lab Notebook Template
 
-[Click here]() to make a copy of the Replit template for this lab.
+[Click here](https://colab.research.google.com/drive/18YBJg-hvbohdMlfhLVU1TZBHho-YRYqF?usp=sharing) to make a copy of the Replit template for this lab.
 
 Alternatives:
 - [`.py` template]() (Google Drive, ND users)
-- [Jupyter Notebook, `.ipynb`]() (Google Colab, ND users)
+- [Jupyter Notebook, `.ipynb`](https://colab.research.google.com/drive/1EltssZ7B1PKv8FBQM55yc7AeyDyEi3Ma?usp=sharing) (Google Colab, ND users)
 
 ## How to submit this lab (and show your work)
 
@@ -126,6 +133,13 @@ Using `print()` as an example:
 - Some functions have an output or return value
 
 ### Comprehension Check
+
+<table>
+ <tr><td>
+<img src="https://github.com/kwaldenphd/internet/blob/main/images/clipboard.png?raw=true" alt="Clipboard icon" width="50"/></td>
+  <td><a href="https://docs.google.com/forms/d/e/1FAIpQLSc6SKZMpaS62tTYi6_gVNnpXNKtpWsFwAMKxCsRoJywyPqERg/viewform?usp=sf_link">Built-in Functions in Python Comprehension Check</a></td>
+  </tr>
+  </table>
 
 Describe functions in your own words
 
@@ -432,6 +446,13 @@ In short, the placeholder variables (or parameters) we use inside the function d
 
 #### Comprehension Check
 
+<table>
+ <tr><td>
+<img src="https://github.com/kwaldenphd/internet/blob/main/images/clipboard.png?raw=true" alt="Clipboard icon" width="50"/></td>
+  <td><a href="https://docs.google.com/forms/d/e/1FAIpQLSdCocH8cRcDgnc4WTiEQESxPKzKv8IpvhCc4D5CFAYb5Sim3Q/viewform?usp=sf_link">Named Functions in Python Comprehension Check</a></td>
+  </tr>
+  </table>
+
 describe process for creating a named function in your own words
 
 how do we call a named function
@@ -546,6 +567,13 @@ Functions that perform a computation but do not yield a result are considered vo
 
 #### Comprehension Check
 
+<table>
+ <tr><td>
+<img src="https://github.com/kwaldenphd/internet/blob/main/images/clipboard.png?raw=true" alt="Clipboard icon" width="50"/></td>
+  <td><a href="https://docs.google.com/forms/d/e/1FAIpQLSciArOqUPt4P8K2jhmj8ZabkM65bxCnp-jwi-L4Xzxc6MryZg/viewform?usp=sf_link">Python Function Considerations Comprehension Check</a></td>
+  </tr>
+  </table>
+
 Describe docstrings in your own words
 
 Syntax ID - creating and accessing docstrings
@@ -611,6 +639,13 @@ For more on modules, packages, and libraries in Python:
 
 ### Comprehension Check
 
+<table>
+ <tr><td>
+<img src="https://github.com/kwaldenphd/internet/blob/main/images/clipboard.png?raw=true" alt="Clipboard icon" width="50"/></td>
+  <td><a href="https://docs.google.com/forms/d/e/1FAIpQLSctIknF2mA209zKSFH7lAA_6dBg9HoAmYDBg58QqNk37YgBVA/viewform?usp=sf_link">Code Reuse & Modularity in Python Comprehension Check</a></td>
+  </tr>
+  </table>
+
 relationship of functions and modules
 
 Relationship of modules and packages
@@ -655,4 +690,5 @@ What gets submitted as the lab notebook is the `Lab_Notebook_Walden.py` file.
 Alternatives:
 - [`.py` template]() (Google Drive, ND users)
 - [Jupyter Notebook, `.ipynb`]() (Google Colab, ND users)
+
 
