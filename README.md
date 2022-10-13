@@ -11,14 +11,18 @@
 - [Lab Notebook Template](#lab-notebook-template)
 - [Overview](#overview)
   * [Modular Programming & Functions](#modular-programming--functions)
-    * [A Python Example](#a-python-example)
-    * [Yet Another Python Example](#yet-another-python-example)
-  * [Why Functions](#why-functions)
 - [Functions in Python](#functions-in-python)
   * [Built-In Functions](#built-in-functions)
   * [Named Functions](#named-functions)
+    * [How Named Functions Work](#how-named-functions-work)
+    * [Python Example A](#python-example-a)
+    * [Python Example B](#python-example-b)
+    * [Python Example C](#python-example-c)
+  * [Parameters & Scoping](#parameters--scoping)  
   * [Docstrings](#docstrings)
   * [Fruitful Versus Void Functions](#fruitful-versus-void-functions)
+- [Putting It All Together: Why Functions?](#putting-it-all-together-why-functions)
+  * [Code Reuse & Modularity](#code-reuse--modularity-aka-a-quick-detour-into-modules-packages-and-libraries)
 - [How to submit this lab (and show your work)](#how-to-submit-this-lab-and-show-your-work)
 - [Lab Notebook Questions](#lab-notebook-questions)
 
@@ -106,7 +110,7 @@ Using `print()` as an example:
 - We pass some kind of input to the function (i.e. `print("Hello world")`)
 - Some functions have an output or return value
 
-## Comprehension Check
+### Comprehension Check
 
 Describe functions in your own words
 
@@ -191,7 +195,7 @@ tempConvert(32)
 
 In this example, we passed the value `32` to the `tempConvert` function we created. 
 
-## Python Example B
+### Python Example B
 
 But we could break down this program further, thinking about the underlying steps:
 - Get user input for Fahrenheit temperature
@@ -266,7 +270,7 @@ def combined():
 combined()
 ```
 
-### Python Function Example C
+### Python Example C
 
 Let's say we want to create a function that prints an input string three times. Breaking down the steps of that program:
 - Get input string
@@ -380,7 +384,7 @@ def printThreeTimes(message):
 printThreeTimes(message) 
 ```
 
-#### Parameters & Scoping
+### Parameters & Scoping
 
 This modified example introduces a couple of key concepts for working with functions:
 - Inside a function, the arguments are assigned to local variables, or placeholder variables. These local variables are called parameters.
