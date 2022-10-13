@@ -635,13 +635,13 @@ For more on modules, packages, and libraries in Python:
 ### Application
 
 Q6A: Select one of the following Python modules to explore:
-- `[numbers](https://docs.python.org/3/library/numbers.html)` (numeric abstract base classes)
-- `[math](https://docs.python.org/3/library/math.html)` (mathematical functions)
-- `[cmath](https://docs.python.org/3/library/cmath.html)` (mathematical functions for complex numbers)
-- `[decimal](https://docs.python.org/3/library/decimal.html)` (decimal fixed point and floating arithmetic)
-- `[fractions](https://docs.python.org/3/library/fractions.html)` (rational numbers)
-- `[random](https://docs.python.org/3/library/random.html)` (generate pseudo-random numbers)
-- `[statistics](https://docs.python.org/3/library/statistics.html)` (mathematical statistics functions)
+- [numbers](https://docs.python.org/3/library/numbers.html) (numeric abstract base classes)
+- [math](https://docs.python.org/3/library/math.html) (mathematical functions)
+- [cmath](https://docs.python.org/3/library/cmath.html) (mathematical functions for complex numbers)
+- [decimal](https://docs.python.org/3/library/decimal.html) (decimal fixed point and floating arithmetic)
+- [fractions](https://docs.python.org/3/library/fractions.html) (rational numbers)
+- [random](https://docs.python.org/3/library/random.html) (generate pseudo-random numbers)
+- [statistics](https://docs.python.org/3/library/statistics.html) (mathematical statistics functions)
 
 Or one of the other modules (starting with "Numeric and Mathematical Modules") on the [Python Standard Library](https://docs.python.org/3/library/) page.
 
@@ -696,13 +696,13 @@ Q4: Write a function average that determines the average value of a list. Includ
 Q5: Write a function uniq that takes a list and returns a new list containing only unique values. Include the function definition as well as a sample function call. Answer to this question includes program + comments that document process and explain your code.
 
 Q6A: Select one of the following Python modules to explore:
-- `[numbers](https://docs.python.org/3/library/numbers.html)` (numeric abstract base classes)
-- `[math](https://docs.python.org/3/library/math.html)` (mathematical functions)
-- `[cmath](https://docs.python.org/3/library/cmath.html)` (mathematical functions for complex numbers)
-- `[decimal](https://docs.python.org/3/library/decimal.html)` (decimal fixed point and floating arithmetic)
-- `[fractions](https://docs.python.org/3/library/fractions.html)` (rational numbers)
-- `[random](https://docs.python.org/3/library/random.html)` (generate pseudo-random numbers)
-- `[statistics](https://docs.python.org/3/library/statistics.html)` (mathematical statistics functions)
+- [numbers](https://docs.python.org/3/library/numbers.html) (numeric abstract base classes)
+- [math](https://docs.python.org/3/library/math.html) (mathematical functions)
+- [cmath](https://docs.python.org/3/library/cmath.html) (mathematical functions for complex numbers)
+- [decimal](https://docs.python.org/3/library/decimal.html) (decimal fixed point and floating arithmetic)
+- [fractions](https://docs.python.org/3/library/fractions.html) (rational numbers)
+- [random](https://docs.python.org/3/library/random.html) (generate pseudo-random numbers)
+- [statistics](https://docs.python.org/3/library/statistics.html) (mathematical statistics functions)
 
 Or one of the other modules (starting with "Numeric and Mathematical Modules") on the [Python Standard Library](https://docs.python.org/3/library/) page.
 
