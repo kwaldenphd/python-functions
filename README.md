@@ -45,7 +45,7 @@ Definitions and explanations in this lab are adapted from Kenneth Leroy Busbee a
 
 ## Key Concepts
 
-[Click here]() for a full list of key concepts and definitions from this lab.
+[Click here]https://github.com/kwaldenphd/python-functions/blob/main/key-concepts.md() for a full list of key concepts and definitions from this lab.
 
 ## Lab Notebook Template
 
@@ -562,7 +562,7 @@ QX: Write a function uniq that takes a list and returns a new list containing on
 
 # Putting It All Together: Why Functions?
 
-NEW HULK MEME
+<p align="center"><img src="https://github.com/kwaldenphd/python-functions/blob/main/images/hulk_antman_meme.png?raw=true" width="500"></p>
 
 Using functions to promote modular programming serves a few key purposes:
 - Yields **more concise code*** by eliminating the need to write out code for the same task multiple times
@@ -588,7 +588,7 @@ Some modules, packages, and libraries are built-in to Python and require no addi
 
 Built-in functions don't require any extra steps to be able to access them in the programming environment. For example, you can see the source code for the `print()` function, contained in Python's `[bltinmodule.c](https://github.com/python/cpython/blob/main/Python/bltinmodule.c#L1972)` file in the [source code](https://github.com/python/cpython/blob/). But all we have to do is use the function name in our program.
 
-GAME PACKAGE FIGURE
+<p align="center"><img src="https://github.com/kwaldenphd/python-functions/blob/main/images/python_package.png?raw=true" width="1000"></p>
 
 In this example, we have a `game` package that includes `sound`, `image`, and `level` sub-packages. Each of those sub-packages includes specific modules. For example, the `sound` sub-package includes the `load.py`, `play.py`, and `pause.py` modules.
 
