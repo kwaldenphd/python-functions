@@ -1,134 +1,149 @@
 # Functions in Python
 
-<a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license"><img style="border-width: 0;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" alt="Creative Commons License" /></a>
-This tutorial is licensed under a <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+<a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license"><img style="border-width: 0;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" alt="Creative Commons License" /></a>This tutorial was written by Katherine Walden and is licensed under a <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+
+## Lab Overview & Goals
 
 ## Acknowledgements
 
-Elements of this lab procedure were adapted from materials developed by [Dr. Peter Bui](http://www3.nd.edu/~pbui/) for the [CSE 10101 "Elements of Computing I" course](https://www3.nd.edu/~pbui/teaching/cdt.30010.fa16/).
-- [Conditional and Alternative Execution](http://nbviewer.jupyter.org/urls/gitlab.com/snippets/25773/raw)
-- [Functions](http://nbviewer.jupyter.org/urls/gitlab.com/snippets/26619/raw)
+When building this lab, the author consulted materials developed by:
+- [Dr. Peter Bui](http://www3.nd.edu/~pbui/) for the [CSE 10101 "Elements of Computing I" course](https://www3.nd.edu/~pbui/teaching/cdt.30010.fa16/).
+  * [Conditional and Alternative Execution](http://nbviewer.jupyter.org/urls/gitlab.com/snippets/25773/raw)
+  * [Functions](http://nbviewer.jupyter.org/urls/gitlab.com/snippets/26619/raw)
+- [Dr. Janet Davis](https://cs.whitman.edu/~davisj/) for the the [CSC 105 "The Digital Age" course](https://www.cs.grinnell.edu/~davisjan/csc/105/2012S/). 
+  * [Laboratory: Programming in Python (Decisions and Repetition)](http://www.cs.grinnell.edu/~davisjan/csc/105/labs/python3.html)
+- [Dr. Corey Pennycuff](https://www3.nd.edu/~cpennycu/) for the [CSE 10101 Elements of Computing (Fall 2019)](https://www3.nd.edu/~cpennycu/2019/fa-CSE10101-CDT30010.html).
+  * [Control flow structures](https://www3.nd.edu/~cpennycu/2019/assets/fall/EOC/19.09.03.ipynb)
+  * [Functions](https://www3.nd.edu/~cpennycu/2019/assets/fall/EOC/19.09.19.ipynb)
+  * [String functions and manipulation](https://www3.nd.edu/~cpennycu/2019/assets/fall/EOC/19.10.01.ipynb)
+- [Lindsay K. Mattock](http://lindsaymattock.net/) for the the [SLIS 5020 Computing Foundations course](http://lindsaymattock.net/computingfoundations.html). 
 
-Elements of this lab procedure were adapted from materials developed by [Dr. Janet Davis](https://cs.whitman.edu/~davisj/) for the the [CSC 105 "The Digital Age" course](https://www.cs.grinnell.edu/~davisjan/csc/105/2012S/). 
-- [Laboratory: Programming in Python (Decisions and Repetition)](http://www.cs.grinnell.edu/~davisjan/csc/105/labs/python3.html)
-
-Elements of this lab procedure were adapted from materials developed by [Dr. Corey Pennycuff](https://www3.nd.edu/~cpennycu/) for the [CSE 10101 Elements of Computing (Fall 2019)](https://www3.nd.edu/~cpennycu/2019/fa-CSE10101-CDT30010.html).
-- [Control flow structures](https://www3.nd.edu/~cpennycu/2019/assets/fall/EOC/19.09.03.ipynb)
-- [Functions](https://www3.nd.edu/~cpennycu/2019/assets/fall/EOC/19.09.19.ipynb)
-- [String functions and manipulation](https://www3.nd.edu/~cpennycu/2019/assets/fall/EOC/19.10.01.ipynb)
-
-Elements of this lab procedure were adapted from materials developed by [Lindsay K. Mattock](http://lindsaymattock.net/) for the the [SLIS 5020 Computing Foundations course](http://lindsaymattock.net/computingfoundations.html). 
+Definitions and explanations in this lab are adapted from Kenneth Leroy Busbee and Dave Braunschweig, *[Programming Fundamentals: A Modular Structured Approach, 2nd Edition](https://press.rebus.community/programmingfundamentals/)* (Rebus Press, 2018)
+- [Chapter III, Functions](https://press.rebus.community/programmingfundamentals/part/functions/)
 
 # Table of Contents
-
-- [Lecture and Live Coding](#lecture-and-live-coding)
+- [Key Concepts](#key-concepts)
 - [Lab Notebook Template](#lab-notebook-template)
-- [Functions](#functions)
+- [Overview](#overview)
+  * [Modular Programming & Functions](#modular-programming--functions)
+- [Functions in Python](#functions-in-python)
   * [Built-In Functions](#built-in-functions)
   * [Named Functions](#named-functions)
     * [How Named Functions Work](#how-named-functions-work)
-    * [Name Function Examples](#named-function-examples)
-      * [Function Example A](#function-example-a)
-      * [Function Example B](#function-example-b)
-    * [Additional Function Considerations](#additional-function-considerations)
-      * [Fruitful Versus Void Functions](#fruitful-versus-void-functions)
-      * [Parameters](#parameters)
-      * [Scoping](#scoping)
-      * [Docstrings](#docstrings)
-  * [Why Functions](#why-functions)
-  * [Additional Work With Functions](#additional-work-with-functions)
+    * [Python Example A](#python-example-a)
+    * [Python Example B](#python-example-b)
+    * [Python Example C](#python-example-c)
+  * [Parameters & Scoping](#parameters--scoping)  
+  * [Docstrings](#docstrings)
+  * [Fruitful Versus Void Functions](#fruitful-versus-void-functions)
+- [Putting It All Together: Why Functions?](#putting-it-all-together-why-functions)
+  * [Code Reuse & Modularity](#code-reuse--modularity-aka-a-quick-detour-into-modules-packages-and-libraries)
+- [How to submit this lab (and show your work)](#how-to-submit-this-lab-and-show-your-work)
 - [Lab Notebook Questions](#lab-notebook-questions)
 
-[Link to lab procedure as a Jupyter Notebook](https://drive.google.com/file/d/1flRQmYhhiPiq3tmyr-aQnLVfX8N4O1Az/view?usp=sharing)
+[Click here]() to access this lab procedure as a Jupyter Notebook.
 
-# Lecture and Live Coding
+## Key Concepts
 
-Throughout this lab, you will see a Panopto icon at the start of select sections.
+[Click here]() for a full list of key concepts and definitions from this lab.
 
-This icon indicates there is lecture/live coding asynchronous content that accompanies this section of the lab. 
+## Lab Notebook Template
 
-You can click the link in the figure caption to access these materials (ND users only).
+[Click here]() to make a copy of the Replit template for this lab.
 
-Example:
+Alternatives:
+- [`.py` template]() (Google Drive, ND users)
+- [Jupyter Notebook, `.ipynb`]() (Google Colab, ND users)
 
-<table>
- <tr><td>
-<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
-  <td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1d06be1d-ba65-478e-a5ad-ad820162cacf">Lab overview</a></td>
-  </tr>
-  </table>
+## How to submit this lab (and show your work)
+
+Moving forward, we'll submit lab notebooks as `.py` files. 
+
+One option is to have a `.py` file that you use to run code and test programs while working through the lab. When ready to submit the lab notebook, you add comments and remove extraneous materials.
+
+Another option is to have an "official" `.py` file that you are using as a lab notebook (separate from your working/testing file). Use comments in Python to note when you are starting a new question (as well as answering a question).
+  * Example: `Lab_Notebook_Walden.py`
+
+What gets submitted as the lab notebook is the `Lab_Notebook_Walden.py` file.
+- When in doubt, use comments
+- Be sure you are using comments to note what question you're responding to
+
+# Overview
+
+From Busbee and Braunschweig's "[Structured Programming](https://press.rebus.community/programmingfundamentals/chapter/structured-programming/)," in *Programming Fundamentals*:
+    
+"One of the most important concepts of programming is the ability to control a program so that different lines of code are executed or that some lines of code are executed many times. The mechanisms that allow us to control the flow of execution are called control structures. Flowcharting is a method of documenting (charting) the flow (or paths) that a program would execute. There are three main categories of control structures:"
+  * Sequence [executes in given sequence]
+  * Selection [selects between two or more flows using condition or question]
+  * Iteration [repeats same piece of code multiple times]
   
-<table>
- <tr><td>
-<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
-<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=2da7d03c-171e-448b-8a56-ae30013636fe">Lecture/live coding playlist</a></td>
-  </tr>
-  </table>
+We're going to spend multiple labs thinking through control structures and control flow, with a focus on how we use them in Python.
+    
+Examples of control structures in Python include:
+- `if-then-else` (syntax: `if`, `else`, `elif`)
+- `while` statements (syntax: `while`)
 
-# Lab Notebook Template
+## Modular Programming & Functions
 
-Lab notebook template:
-- [`.py` file](https://drive.google.com/file/d/1y5HuDUvcFGwQIDog-6kqpImPwcm_-YO5/view?usp=sharing)
-- [Jupyter Notebook](https://drive.google.com/file/d/1uJi6ehVbYOPtU1zAYa7jNuznMlizrFq5/view?usp=sharing)
+We've also previously been introduced to the concept of **code blocks**. From Busbee and Braunschweig's "[Code Blocks](https://press.rebus.community/programmingfundamentals/chapter/code-blocks/)" from *Programming Fundamentals*:
+- "A code block, sometimes referred to as a compound statement, is a lexical structure of source code which is grouped together. Blocks consist of one or more declarations and statements. A programming language that permits the creation of blocks, including blocks nested within other blocks, is called a block-structured programming language. Blocks are fundamental to structured programming, where control structures are formed from blocks."
+   
+Approaching a program as a series of components that each accomplish tasks that are part of the larger workflow gets us to a new concept: **modularity** or **modular programming**
 
+From Busbee and Braunschweig's "[Modular Programming](https://press.rebus.community/programmingfundamentals/chapter/modular-programming/)," in *Programming Fundamentals*:
+- "Modular programming is a software design technique that emphasizes separating the functionality of a program into independent, interchangeable modules, such that each contains everything necessary to execute only one aspect of the desired functionality."
 
-# Functions
+Code blocks are one way to think about these discrete parts of a program. A more precise term used in programming languages is **function.** "Functions are important because they allow us to take large complicated programs and to divide them into smaller manageable pieces. Because the function is a smaller piece of the overall program, we can concentrate on what we want it to do and test it to make sure it works properly" (Busbee and Braunschweig, [Modular Programming](https://press.rebus.community/programmingfundamentals/chapter/modular-programming/)).
 
-<table>
- <tr><td>
-<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
-  <td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1d06be1d-ba65-478e-a5ad-ad820162cacf">Lab overview</a></td>
-  </tr>
-  </table>
+# Functions in Python
 
-<table>
- <tr><td>
-<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
-  <td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=728d3882-73f5-43d9-9cc5-ad8201622f3e">Lecture/live coding</a></td>
-  </tr>
-  </table>
-
-1. In Python, a function is a named sequence of statements that performs a computation.
+In Python, a function is a named sequence of statements that performs a computation.
 - Key term: *function*
 
-2. To execute a function, we call it by name and pass it an appropriate set of input arguments.
-- Key terms: *function call, input argument*
+To execute a function, we call it by name and pass it an appropriate set of input arguments. A function takes zero or more arguments as inputs and returns zero or more outputs as a result. The output or result of a function is called the return value.
+- Key terms: *function call*, *input argument*, *function output* or *return value*
 
-3. A function takes zero or more arguments as inputs and returns zero or more outputs as a result.
-
-4. The output or result of a function is called the return value.
-- Key terms: *function output or return value*
-
-5. Data, parameters, or arguments can be passed into a function.
-
-6. Functions can also return data.
+Data, parameters, or arguments can be passed into a function. Functions can also return data.
 
 ## Built-In Functions
 
-7. We have actually already been working with a number of Python's built-in functions.
+We have actually already been working with a number of Python's built-in functions. These include `print()`, `dict()`, `input()`, `int()`, and `len()`.
 
-8. These include `print()`, `dict()`, `input()`, `int()`, and `len()`.
-
-9. We call built-in functions using the function name, followed by parenthesis.
+We call built-in functions using the function name, followed by parenthesis.
 - `print()`
 - `dict()`
 - `input()`
 - `int()`
 - `len()`
 
+When we call one of these built-in functions, Python accesses and then executes the funtion's source code stored elsewhere in the Python environment.
+- For example, you can see the source code for the `print()` function, contained in `[bltinmodule.c](https://github.com/python/cpython/blob/main/Python/bltinmodule.c#L1972)` file in Python's [source code](https://github.com/python/cpython/blob/).
+
+Using `print()` as an example:
+- The function definition is contained elsewhere in Python's source code
+- We call the function using its name `print()`
+- We pass some kind of input to the function (i.e. `print("Hello world")`)
+- Some functions have an output or return value
+
+### Comprehension Check
+
+Describe functions in your own words
+
+Which of following is NOT an example of a built-in function in Python
+
+How a built-in function in Python executes
+
 ## Named Functions
 
-10. But Python also allows you to create (and name) your own functions.
+But Python also lets us to create (and name) our own functions.
 - Key term: *named function(s)*
 
-11. We can define or name a function using the `def` keyword.
-
-12. A function definition includes a few core components:
+We can define or name a function using the `def` keyword. A function definition includes a few core components:
 - The name of the new function
 - The list of function arguments
 - The sequence of statements to execute when the function is called
 
-13. The core syntax for defining your own function:
+The core syntax for defining your own function:
 
 ```Python
 # use def keyword to define function name
@@ -137,158 +152,262 @@ def function_name(argument):
  return result
 ```
 
-14. Let's unpack each of those components.
-
-15. `def function_name()` is the name you are giving to the function you create- this is the header for the function definition.
-
-16. Function names have many of the same rules as variable names- no spaces or special characters.
-
-17. `argument` is the argument that will be passed to the function.
-
-18. When we are initially defining the function, the `argument` value is typically a placeholder.
-
-19. Later in the program when we call the named function, the argument being passed to the function goes in these parenthesis.
-
-20. The nested or indented line `statement(s)` is the body of the function definition.
-
-21. It includes a sequence of statements to execute when the function is called.
-
-22. The nested or indented line `return result` is a placeholder for the function output or endpoint- it is also part of the body of the function definition.
+Let's unpack each of those components.
+- `def function_name()` is the name you are giving to the function you create- this is the header for the function definition.
+  * Function names have many of the same rules as variable names- no spaces or special characters.
+- `argument` is the argument that will be passed to the function.
+  * When we are initially defining the function, the `argument` value is typically a placeholder.
+  * Later in the program when we call the named function, the argument being passed to the function goes in these parenthesis.
+- The nested or indented line `statement(s)` is the body of the function definition. It includes a sequence of statements to execute when the function is called.
+- The nested or indented line `return result` is a placeholder for the function output or endpoint- it is also part of the body of the function definition.
 
 ### How Named Functions Work
 
-23. So what happens when we use the `def` keyword to create a named function?
+So what happens when we use the `def` keyword to create a named function?
 
-24. Programs are always executed sequentially, one statement at a time.
+Programs are always executed sequentially, one statement at a time. Function definitions create new functions, but do not execute the bodies or statements within the functions UNTIL the functions are called.
 
-25. Function definitions create new functions, but do not execute the bodies or statements within the functions UNTIL the functions are called.
+When we call a named function, the program jumps to the definition for the function being called, executes the function's body, and then returns to the point in the program where the function was called and resumes executing the program.
 
-26. When we call a named function, the program jumps to the definition for the function being called, executes the function's body, and then returns to the point in the program where the function was called and resumes executing the program.
+As mentioned earlier, functions are an example of a control structure. Let's look at some examples.
 
-27. Let's look at some examples.
+### Python Example A
 
-#### Named Function Examples
+Let's look at a Python example. In a previous lab, we wrote a program that took a temperature in Fahrenheit and converted it to Celsius.
 
-##### Function Example A
+What that program might have looked like:
+```Python
+# input temp
+f = float(input("Enter a temperature in Fahrenheit: "))
 
-28. Let's say we want to create a function that prints an input string three times.
+# convert to celsius
+c = (f -32) * 5/9
+
+# show output
+print(f"{f} degrees Fahrenheit is equal to {c} degrees celsius")
+```
+
+<blockquote>For more on <code>f strings</code> in Python: https://realpython.com/python-f-strings/</blockquote>
+
+This isn't a terribly long program to write out, but if we need to perform this conversion regularly, we might want to just write it out once and be able use that working code elsewhere in our program.
+
+We can rewrite this program as a function that we can access elsewhere in our program. 
 
 ```Python
+# define function
+def tempConvert():
+  fahrenheit = float(input("Enter a temperature in Fahrenheit: ")) # get temperature
+  celsius = (fahrenheit -32) * 5/9 # convert to celsius
+  print(f"{fahrenheit} degrees Fahrenheit is equal to {celsius} degrees celsius") # show output
+```
+
+Then, elsewhere in our program, we could call that function using its name.
+
+```Python
+# sample function call
+tempConvert(32)
+```
+
+In this example, we passed the value `32` to the `tempConvert` function we created. 
+
+### Python Example B
+
+But we could break down this program further, thinking about the underlying steps:
+- Get user input for Fahrenheit temperature
+- Convert to celsius
+- Show output
+
+We could create modular pieces for each of these tasks.
+
+```Python
+# function for getting input
+def getFahrenheit():
+  fahrenheit = float(input("Enter a temperature in Fahrenheit: ")) 
+  return fahrenheit
+```
+
+```Python
+# function for converting to Celsius
+def convertTemp(fahrenheit):
+  celsius = (fahrenheit -32) * 5/9
+  return celsius
+```
+
+```Python
+# function for returning output
+def result(fahrenheit, celsius):
+  print(f"{fahrenheit} degrees Fahrenheit is equal to {celsius} degrees celsius")
+```
+
+And we could create a combined function from each of those three individual functions.
+
+```Python
+# combined function
+def combined():
+  fahrenheit = getFahrenheit()
+  celsius = convertTemp(fahrenheit)
+  result(fahrenheit, celsius)
+```
+
+To run our entire temperature conversion program, we would just need to call the `combined()` function using its name.
+
+```Python
+# combined temperature conversion program function call
+combined()
+```
+
+We'll dig into what's happening here in more detail later in this lab. To summarize, we created a function for each piece of our conversion program (`getFahrenheit`, `convertTemp`, `result`), and then created a `main` function that combined those three steps.
+
+Putting that all together:
+
+```Python
+# function for getting input
+def getFahrenheit():
+  fahrenheit = float(input("Enter a temperature in Fahrenheit: ")) 
+  return fahrenheit
+  
+# function for converting to Celsius
+def convertTemp(fahrenheit):
+  celsius = (fahrenheit -32) * 5/9
+  return celsius
+  
+# function for returning output
+def result(fahrenheit, celsius):
+  print(f"{fahrenheit} degrees Fahrenheit is equal to {celsius} degrees celsius")
+  
+# combined function
+def combined():
+  fahrenheit = getFahrenheit()
+  celsius = convertTemp(fahrenheit)
+  result(fahrenheit, celsius)
+  
+# combined temperature conversion program function call
+combined()
+```
+
+### Python Example C
+
+Let's say we want to create a function that prints an input string three times. Breaking down the steps of that program:
+- Get input string
+- Print the string (3x)
+
+We might also need some way of tracking how many times we've printed the string so it stops at three.
+
+One way we could approach this would be using a `count` variable and a `while` statement.
+
+```Python
+# assign count to 0
+count = 0
+
+# get input string
+message = input("Type your message here: ")
+
+# while statement
+while count < 3:
+    print(message) # print message
+    count += 1 # reassign count
+```
+
+Thinking through how this program runs:
+- `count` starts at `0` and increases by an increment of `1` each time the code nested under `while` runs
+- The code nested under `while` will keep running until the initial condition (`count < 3`) is no longer true
+
+We can test this program to make sure the output is what we expect. How that we have a program that prints an input string three times, we can create the named function.
+
+```Python
+# function definition
 def printThreeTimes(string):
- for x in range(3):
-  print(string)
 ```
 
-29. To walk through what is happening in this function definition...
-
-30. `def printThreeTimes(string)` assigns the function name (`printThreeTimes`).
-
-31. This is the name we will use when calling this function elsewhere in the program.
-
-32. `for x in range(3)` is part of the body of the function.
-
-33. This line of code uses a `for` loop to say "for each integer value in the range leading up to but not including 3," do.....something!
-
-34. That "something" is the `print` statement nested in the `for` loop.
-
-35. That `print` statement will output the `string` value each time through the `for` loop.
-
-36. Now let's see this named function in action.
+Then under the `def` keyword will go the lines of code that execute our program.
 
 ```Python
-string = "There's no place like home."
-
-printThreeTimes(string)
+# function definition
+def printThreeTimes():
+    count = 0 # assign count
+    message = input("Type your message here: ") # get input message
+    while count < 3: # while statement
+        print(message) # print message
+        count += 1 # reassign count
 ```
 
-37. We wouldn't need to assign the string to a variable- we could pass it directly to the function.
+Now when we run this block of code, there won't be any output because we are just creating or defining the `printThreeTimes` function. When we need to use the function, we can call it using its name.
 
 ```Python
-printThreeTimes("There's no place like home.")
+# sample function call
+printThreeTimes()
 ```
 
-##### Function Example B
-
-38. Let's look at another example.
-
-39. Here, we want to create a function that prints an input string a specific number of times.
-
-<blockquote>Q1: Describe how you would start building out code to accomplish this task? What functions, statements, or keywords would you need to use? How would you start to organize this program?</blockquote>
-
-<blockquote>Q2: See where you can get with writing this program. What parts of the program were you able to get working? Where did you run into challenges?</blockquote>
-
-40. Here is one approach to this task.
-
-41. First, we want to define the name of our function, as well as what input arguments it will take.
-
-42. We know that we need to pass a string to be printed AND an integer for the number of times to the named function.
-
-43. For now, let's call the string `string` and the integer `times`.
-
-44. So the function header could look like:
+Putting that all together:
+    
 ```Python
-def printNTimes(string, times):
+# function definition
+def printThreeTimes():
+    count = 0 # assign count
+    message = input("Type your message here: ") # get input message
+    while count < 3: # while statement
+        print(message) # print message
+        count += 1 # reassign count
+    
+# function call
+printThreeTimes()
 ```
 
-45. We've named the `printNTimes` function and established we will be passing two arguments to the function.
+But let's say we don't want to use an `input()` statement as part of the function- what if we wanted to pass a specific value to the function?
 
-46. Next, we could us a `for` loop in combination with the `range()` function to accomplish a specific task for a specific number of iterations.
+First, let's build a program that accomplishes this task.
 
 ```Python
-for x in range(times)
+# assign string
+message = "There's no place like home"
+
+# assign count
+count = 0
+
+# while statement
+while count < 3:
+    print(message) # print message
+    count += 1 # reassign count
 ```
 
-47. As in the previous named function example, we can think of the `for` loop as saying "for each integer value in the range leading up to but not including the `times` value," do.....something!
-
-48. That "something" is the `print` statement nested in the `for` loop.
-
-49. That `print` statement will output the `string` value each time through the `for` loop.
-
-50. Putting that all together:
+To create the function:
 
 ```Python
-def printNTimes(string, times):
- for x in range(times):
-  print(string)
+def printThreeTimes(message):
+    count = 0 # assign count
+    while count < 3: # while statement
+        print(message) # print message
+        count += 1 # reassign count
 ```
 
-51. So now we have a function that prints our string a number of times specified by the `times` value in combination with the `range()` function.
+Remember in this scenario, we are going to pass a specific value to the function, rather than asking for an input as part of the function.
 
-<blockquote>Q3: How does the sample program compare to your approach to the previous two questions? What was similar? What was different? How are you thinking differently (if at all) about how to approach this type of program?</blockquote>
+So how would we call our modified `printThreeTimes` function? We would pass a string object to the function.
 
-<blockquote>Q4: How would you write a program that calls the function you have created? Include code + comments.</blockquote>
+```Python
+# assign string
+message = "There's no place like home"
 
-<blockquote><a href="https://www.w3schools.com/python/python_functions.asp">Click here</a> for more information on named functions in Python, via W3Schools.</blockquote>
+# function definition
+def printThreeTimes(message):
+    count = 0 # assign count
+    while count < 3: # while statement
+        print(message) # print message
+        count += 1 # reassign count
 
-### Additional Functions Considerations
+# function call
+printThreeTimes(message) 
+```
 
-#### Fruitful Versus Void Functions
+### Parameters & Scoping
 
-52. Functions that yield a result are considered fruitful.
-- Key term: *fruitful function(s)*
+This modified example introduces a couple of key concepts for working with functions:
+- Inside a function, the arguments are assigned to local variables, or placeholder variables. These local variables are called parameters.
+  * Key term: *parameter*
+- The name of the parameter inside the function is separated or isolated from the name outside the function. This separation of namespaces is called scoping.
+  * Key term: *scoping*
 
-53. To output a result, a function uses the return statement to pass results back to the function call.
-
-54. Functions that perform a computation but do not yield a result are considered void.
-- Key term: *void function(s)*
-
-55. By default, the return value for void functions is `None`.
-
-#### Parameters
-
-56. Inside a function, the arguments are assigned to local variables, or placeholder variables.
-
-57. These local variables are called parameters.
-- Key term: *parameter*
-
-#### Scoping
-
-58. The name of the parameter inside the function is separated or isolated from the name outside the function.
-
-59. This separation of namespaces is called scoping.
-- Key term: *scoping*
-
-60. An example of scoping:
+An example of scoping:
 
 ```Python
 # assign x variable
@@ -305,146 +424,235 @@ print(x)
 print_number(2)
 ```
 
-61. In short, the placeholder variables (or parameters) we use inside the function definition are separated or isolated from any instance where a variable or parameter with the same name is used outside the function definition.
+The value of `x` in the first line of this program has nothing to do with the purpose `x` is serving in the function definition.
+
+In short, the placeholder variables (or parameters) we use inside the function definition are separated or isolated from any instance where a variable or parameter with the same name is used outside the function definition.
 
 <blockquote><a href="https://www.w3schools.com/python/python_scope.asp">Click here</a> to learn more about scope in Python, via W3Schools.</blockquote>
 
-#### Docstrings
+#### Comprehension Check
 
-62. We can add comments to a function definition by including a docstring under the function header.
-- Key term: *docstring*
+describe process for creating a named function in your own words
 
-63. As we've learned previously, single-line comments in Python are declared using the `#` symbol, and multi-line comments in Python are declared using the <code>'''</code> symbol.
+how do we call a named function
 
-64. Docstrings are declared using triple single quotes (<code>'''</code>) or triple double quotes (`"""`).
+argument/parameter/scope in your own words
 
-65. Best practice is to start the docstring just below the function header.
+parameters- given an example, what is the value of x in line 2 vs line 7
 
-66. Another best practice for docstrings is to begin with a capital letter and end with a period.
+#### Application
 
-67. The docstring should briefly describe what the function does.
+Let's say we want to create a function that prints an input string a specific number of times.
 
-68. Let's see this in action with an example from earlier in the lab.
+Breaking down the steps of that program:
+- Get the input string (`message`)
+- Get the number of times (`x`)
+- Print the string `x` number of times
+
+We might also need some way of tracking how many times we've printed the string so it stops at the specified number.
+
+<blockquote>Q1A: Describe how you would start building out code to accomplish this task? What functions, statements, or keywords would you need to use? How would you start to organize this program?</blockquote>
+
+<blockquote>Q1B: See where you can get with writing this program. What parts of the program were you able to get working? Where did you run into challenges?</blockquote>
+
+Here is one approach to this task:
+
+We can use two input statements to get `message` and `x`. And one way we could approach printing the string `x` number of times would be to use a `count` variable and a `while` statement.
 
 ```Python
-def printThreeTimes(string):
- '''Prints an input string three times'''
- for x in range(3):
-  print(string)
+# input statement for string
+message = input("Enter your message here: ")
+
+# input statement for number of times
+x = int(input("How many times do you want this statement to print? Enter a number value."))
+
+# assign count
+count = 0
+
+# while statement
+while count < x:
+    print(message) # print message
+    count += 1 # reassign count
 ```
 
-69. We have a couple options for accessing the contents of the docstring elesewhere in the program.
+Now to create a function using this program.
 
-70. We can use the `__doc__` method (underscore, underscore, doc, underscore, underscore).
+```Python
+# function definition
+def printNTimes():
+    message = input("Enter your message here: ") # input statement for string
+    x = int(input("How many times do you want this statement to print? Enter a number value.")) # input statement for number of times
+    count = 0 # assign count
+    while count < x: # while statement
+        print(message) # print message
+        count += 1 # reassign count
+
+# function call
+printNTimes()
+```
+
+<blockquote>Q1C: How does the sample program compare to your approach? What was similar? What was different? How are you thinking differently (if at all) about how to approach this type of program?</blockquote>
+
+<blockquote>Q2: MODIFY TO PASS SPECIFIC VALUES TO THE FUNCTION</blockquote>
+
+### Docstrings
+
+We can add comments to a function definition by including a docstring under the function header.
+- Key term: *docstring*
+
+As we've learned previously, single-line comments in Python are declared using the `#` symbol, and multi-line comments in Python are declared using the <code>'''</code> symbol.
+
+Docstrings are declared using triple single quotes (<code>'''</code>) or triple double quotes (`"""`).
+- Best practice is to start the docstring just below the function header.
+- Another best practice for docstrings is to begin with a capital letter and end with a period.
+- The docstring should briefly describe what the function does.
+
+Let's see this in action with an example from earlier in the lab.
+
+```Python
+# function definition
+def printThreeTimes():
+ '''Prints an input string three times'''
+    count = 0 # assign count
+    message = input("Type your message here: ") # get input message
+    while count < 3: # while statement
+        print(message) # print message
+        count += 1 # reassign count
+```
+
+We have a couple options for accessing the contents of the docstring elesewhere in the program. We can use the `__doc__` method (underscore, underscore, doc, underscore, underscore).
 ```Python
 print("Using __doc__:")
 print(printThreeTimes.__doc__)
 ```
 
-71. Or we can use the `help()` function.
+Or we can use the `help()` function.
 ```Python
 print("Using help:")
 help(printThreeTimes)
 ```
 
-72. Multi-line docstrings can be used to provide additional description about the named function, including information about parameters, arguments, and returns.
+Multi-line docstrings can be used to provide additional description about the named function, including information about parameters, arguments, and returns.
 
 <blockquote><a href="https://www.python.org/dev/peps/pep-0257/">Click here</a> to learn more about docstrings in Python, via Python.org documentation.</blockquote>
 
-## Why Functions
+### Fruitful Versus Void Functions
 
-73. By this point in the lab, your brain might be hurting. Mine is.
+Functions that yield a result are considered fruitful. To output a result, a function uses the `return` statement to pass results back to the function call.
+- Key term: *fruitful function(s)*
 
-74. Let's take a step back and think about *why* we would want or need to use functions in our code.
+Functions that perform a computation but do not yield a result are considered void. By default, the return value for void functions is `None`.
+- Key term: *void function(s)*
 
-<p align="center"><a href="https://github.com/kwaldenphd/python-conditional-statements-functions/blob/main/Python_Function_Meme.png?raw=true"><img class="aligncenter" src="https://github.com/kwaldenphd/python-conditional-statements-functions/blob/main/Python_Function_Meme.png?raw=true" /></a></p>
+#### Comprehension Check
 
-75. Python functions can help with programming tasks in a number of key ways.
+Describe docstrings in your own words
 
-76. They help yield **more concise code*** by eliminating the need to write out code for the same task multiple times.
+Syntax ID - creating and accessing docstrings
 
-77. In doing so, they also **improve code readability**.
+Example function - is it fruitful or is it void
 
-78. Functions also help us **more effectively test and debug code**.
+#### Application
 
-79. Again, because we are creating reusable pieces or building blocks of code, we can more readily pinpoint where things are going wrong or not working in our code.
+QX: Write a function is_even that determines whether or not a number n is even. Include code + comments for the function definition as well as a sample function call.
 
-80. By allowing us to define and call functions for common tasks, they **promote code reuse and modularity**.
+QX: Write a function average that determines the average value of a list. Include code + comments for the function definition as well as a sample function call.
 
-## Additional Work With Functions
+QX: Write a function uniq that takes a list and returns a new list containing only unique values. Include code + comments for the function definition as well as a sample function call.
 
-Q5: Write a function `is_even` that determines whether or not a number `n` is even. Include code + comments for the function definition as well as a sample function call.
+# Putting It All Together: Why Functions?
 
-Q6: Write a function `average` that determines the average value of a list. Include code + comments for the function definition as well as a sample function call.
+NEW HULK MEME
 
-Q7: Write a function `uniq` that takes a list and returns a new list containing only unique values. Include code + comments for the function definition as well as a sample function call.
+Using functions to promote modular programming serves a few key purposes:
+- Yields **more concise code*** by eliminating the need to write out code for the same task multiple times
+- Improves **improve code readability**
+- Helps us **more effectively test and debug code**
+  * Because we are creating reusable pieces or building blocks of code, we can more readily pinpoint where things are going wrong or not working in our code.
+- **Promotes code reuse and modularity** by allowing us to define and call functions for common tasks
 
-Q8: The Python code below is suppose to create a function that determines if the given list of numbers is sorted. That is, the function should return `True` if each item in the list is less than the next item. Unfortunately, there are a few errors in the code below. Identify the errors and fix the code. Include your modified code with comments that document what changes you made to address the errors.
+This may seem overly-complicated for a relatively simple program.
+
+But imagine all kinds of more complex tasks we might want to accomplish in a programming environment- analyzing data, generating visualizations, creating textures, building interaction objects, etc. All of that becomes possible through functions- modular building blocks that can be combined to accomplish more complex tasks.
+
+## Code Reuse & Modularity (aka a quick detour into modules, packages, and libraries)
+
+As we move forward in Python, we're going to be encountering the terms `package`, `module`, and `library.` All of these terms refer to external Python programs that we can use in our program without having to recreate the entire original code. We can think of these resources as "expansion packs" for Python that expand or extend the programming language's built-in functionality.
+
+A few preliminary definitions...
+- A ***module*** is a Python file that typically includes specialized functions and variables. Modules typically have `.py` file extensions.
+- A single or simple directory of modules is called a ***package***. Packages are typically a simple directory with multiple modules.
+- A ***library*** includes blocks of code that can be reused within a program. Libraries are a collection of modules that have a much more complex directory/sub-directory/etc structure than packages
+
+Some modules, packages, and libraries are built-in to Python and require no additional installation. Others have to be installed (typically at the command line, or in the terminal) before you can import and use them in a program.
+
+Built-in functions don't require any extra steps to be able to access them in the programming environment. For example, you can see the source code for the `print()` function, contained in Python's `[bltinmodule.c](https://github.com/python/cpython/blob/main/Python/bltinmodule.c#L1972)` file in the [source code](https://github.com/python/cpython/blob/). But all we have to do is use the function name in our program.
+
+GAME PACKAGE FIGURE
+
+In this example, we have a `game` package that includes `sound`, `image`, and `level` sub-packages. Each of those sub-packages includes specific modules. For example, the `sound` sub-package includes the `load.py`, `play.py`, and `pause.py` modules.
+
+We can bring these modules into our program using an `import` statement.
+
+For example, let's say we wanted to bring the `start.py` module from the `level` sub-package into our program.
+
+We could do this using the following `import` statement at the start of our program.
 
 ```Python
-is_sorted([1, 2, 3, 4, 2])
-
-def is_sorted(numbers):
-    ''' Return whether or not the list of numbers is sorted '''
-    for i in range(len(numbers) - 1):
-        if numbers[i] > numbers[i + 1]:
-            return False
-    return True
+from game.level import start
 ```
 
-Q9: In your own words, what is a function?
+Now, we would be able to access any of the functions (or other code) contained in the `start.py` module, because we have **imported** them into our program.
 
-Q10: In your own words, how do we create a function?
+For more on modules, packages, and libraries in Python:
+- Programmiz, "[Python Package](https://www.programiz.com/python-programming/package)
+- GeeksForGeeks, "[What is the difference between Python's Module, Package and Library?](https://www.geeksforgeeks.org/what-is-the-difference-between-pythons-module-package-and-library/)" (30 September 2022)
+- John Sturtz, "[Python Modules and Packages - An Introduction](https://realpython.com/python-modules-packages/)" *Real Python*
 
-Q11: In your own words, what is an argument or parameter?
+### Comprehension Check
 
-Q12: In your own words, what is a return value?
+relationship of functions and modules
 
-Q13: Why would we use functions, or what is the value of functions?
+Relationship of modules and packages
 
-Q14: Include a link to your Replit workspace for this lab.
+how we import specific modules from a package
+
+### Application
+
+Pick a specific Python package- what does it do/what is it for
+
+What specific modules does it contain
+
+How would we import it into a program
+
+Write a program that uses functions/arguments from the module
+
+Packages that folks could chose from:
+- Statistics
+- Random
+- If you hate yourself, SportsDB
+
+
+QX: Why would we use functions, value of functions. Relationship to code reuse/modularity.
+
+## How to submit this lab (and show your work)
+
+Moving forward, we'll submit lab notebooks as `.py` files. 
+
+One option is to have a `.py` file that you use to run code and test programs while working through the lab. When ready to submit the lab notebook, you add comments and remove extraneous materials.
+
+Another option is to have an "official" `.py` file that you are using as a lab notebook (separate from your working/testing file). Use comments in Python to note when you are starting a new question (as well as answering a question).
+  * Example: `Lab_Notebook_Walden.py`
+
+What gets submitted as the lab notebook is the `Lab_Notebook_Walden.py` file.
+- When in doubt, use comments
+- Be sure you are using comments to note what question you're responding to
 
 # Lab Notebook Questions
 
-Lab notebook template:
-- [`.py` file](https://drive.google.com/file/d/1y5HuDUvcFGwQIDog-6kqpImPwcm_-YO5/view?usp=sharing)
-- [Jupyter Notebook](https://drive.google.com/file/d/1uJi6ehVbYOPtU1zAYa7jNuznMlizrFq5/view?usp=sharing)
+[Click here]() to make a copy of the Replit template for this lab.
 
-Q1: Describe how you would start building out code to accomplish this task? What functions, statements, or keywords would you need to use? How would you start to organize this program?
+Alternatives:
+- [`.py` template]() (Google Drive, ND users)
+- [Jupyter Notebook, `.ipynb`]() (Google Colab, ND users)
 
-Q2: See where you can get with writing this program. What parts of the program were you able to get working? Where did you run into challenges?
-
-Q3: How does the sample program compare to your approach to the previous two questions? What was similar? What was different? How are you thinking differently (if at all) about how to approach this type of program?
-
-Q4: How would you write a program that calls the function you have created? Include code + comments.
-
-Q5: Write a function is_even that determines whether or not a number n is even. Include code + comments for the function definition as well as a sample function call.
-
-Q6: Write a function average that determines the average value of a list. Include code + comments for the function definition as well as a sample function call.
-
-Q7: Write a function uniq that takes a list and returns a new list containing only unique values. Include code + comments for the function definition as well as a sample function call.
-
-Q8: The Python code below is suppose to create a function that determines if the given list of numbers is sorted. That is, the function should return True if each item in the list is less than the next item. Unfortunately, there are a few errors in the code below. Identify the errors and fix the code. Include your modified code with comments that document what changes you made to address the errors.
-
-```Python
-is_sorted([1, 2, 3, 4, 2])
-
-def is_sorted(numbers):
-    ''' Return whether or not the list of numbers is sorted '''
-    for i in range(len(numbers) - 1):
-        if numbers[i] > numbers[i + 1]:
-            return False
-    return True
-```
-
-Q9: In your own words, what is a function?
-
-Q10: In your own words, how do we create a function?
-
-Q11: In your own words, what is an argument or parameter?
-
-Q12: In your own words, what is a return value?
-
-Q13: Why would we use functions, or what is the value of functions?
-
-Q14: Include a link to your Replit workspace for this lab.
