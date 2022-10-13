@@ -56,7 +56,7 @@ Definitions and explanations in this lab are adapted from Kenneth Leroy Busbee a
 
 ## Lab Notebook Template
 
-[Click here](https://colab.research.google.com/drive/18YBJg-hvbohdMlfhLVU1TZBHho-YRYqF?usp=sharing) to make a copy of the Replit template for this lab.
+[Click here](https://replit.com/team/eoc-f22/Functions-in-Python) to make a copy of the Replit template for this lab.
 
 Alternatives:
 - [`.py` template]() (Google Drive, ND users)
@@ -140,12 +140,6 @@ Using `print()` as an example:
   <td><a href="https://docs.google.com/forms/d/e/1FAIpQLSc6SKZMpaS62tTYi6_gVNnpXNKtpWsFwAMKxCsRoJywyPqERg/viewform?usp=sf_link">Built-in Functions in Python Comprehension Check</a></td>
   </tr>
   </table>
-
-Describe functions in your own words
-
-Which of following is NOT an example of a built-in function in Python
-
-How a built-in function in Python executes
 
 ## Named Functions
 
@@ -453,14 +447,6 @@ In short, the placeholder variables (or parameters) we use inside the function d
   </tr>
   </table>
 
-describe process for creating a named function in your own words
-
-how do we call a named function
-
-argument/parameter/scope in your own words
-
-parameters- given an example, what is the value of x in line 2 vs line 7
-
 #### Application
 
 Let's say we want to create a function that prints an input string a specific number of times.
@@ -472,9 +458,9 @@ Breaking down the steps of that program:
 
 We might also need some way of tracking how many times we've printed the string so it stops at the specified number.
 
-<blockquote>Q1A: Describe how you would start building out code to accomplish this task? What functions, statements, or keywords would you need to use? How would you start to organize this program?</blockquote>
+<blockquote>Q1A: Describe how you would start building out a program to accomplish this task? What functions, statements, or keywords would you need to use? How would you start to organize this program?</blockquote>
 
-<blockquote>Q1B: See where you can get with writing this program. What parts of the program were you able to get working? Where did you run into challenges?</blockquote>
+<blockquote>Q1B: See where you can get with writing this program. What parts of the program were you able to get working? Where did you run into challenges? Answer to this question includes program + comments that document process and explain your code.</blockquote>
 
 Here is one approach to this task:
 
@@ -514,7 +500,13 @@ printNTimes()
 
 <blockquote>Q1C: How does the sample program compare to your approach? What was similar? What was different? How are you thinking differently (if at all) about how to approach this type of program?</blockquote>
 
-<blockquote>Q2: MODIFY TO PASS SPECIFIC VALUES TO THE FUNCTION</blockquote>
+But let's say we don't want to use an `input()` statement as part of the function- what if we wanted to pass specific values to the function?
+
+<blockquote>Q2A: Modify the program you built for the previous section of the lab to take specific values as inputs (rather than get inputs as part of the function). Answer to this question includes program + comments that document process and explain your code.</blockquote>
+
+<blockquote>Q2B: Then, create a named function and function call for this program. Answer to this question includes program + comments that document process and explain your code.</blockquote>
+
+<blockquote>Q2C: What parts of the program were you able to get working? Where did you run into challenges?</blockquote>
 
 ### Docstrings
 
@@ -574,19 +566,13 @@ Functions that perform a computation but do not yield a result are considered vo
   </tr>
   </table>
 
-Describe docstrings in your own words
-
-Syntax ID - creating and accessing docstrings
-
-Example function - is it fruitful or is it void
-
 #### Application
 
-QX: Write a function is_even that determines whether or not a number n is even. Include code + comments for the function definition as well as a sample function call.
+Q3: Write a function is_even that determines whether or not a number n is even. Include the function definition as well as a sample function call. Answer to this question includes program + comments that document process and explain your code.
 
-QX: Write a function average that determines the average value of a list. Include code + comments for the function definition as well as a sample function call.
+Q4: Write a function average that determines the average value of a list. Include the function definition as well as a sample function call. Answer to this question includes program + comments that document process and explain your code.
 
-QX: Write a function uniq that takes a list and returns a new list containing only unique values. Include code + comments for the function definition as well as a sample function call.
+Q5: Write a function uniq that takes a list and returns a new list containing only unique values. Include the function definition as well as a sample function call. Answer to this question includes program + comments that document process and explain your code.
 
 # Putting It All Together: Why Functions?
 
@@ -646,29 +632,29 @@ For more on modules, packages, and libraries in Python:
   </tr>
   </table>
 
-relationship of functions and modules
-
-Relationship of modules and packages
-
-how we import specific modules from a package
-
 ### Application
 
-Pick a specific Python package- what does it do/what is it for
+Q6A: Select one of the following Python modules to explore:
+- `[numbers](https://docs.python.org/3/library/numbers.html)` (numeric abstract base classes)
+- `[math](https://docs.python.org/3/library/math.html)` (mathematical functions)
+- `[cmath](https://docs.python.org/3/library/cmath.html)` (mathematical functions for complex numbers)
+- `[decimal](https://docs.python.org/3/library/decimal.html)` (decimal fixed point and floating arithmetic)
+- `[fractions](https://docs.python.org/3/library/fractions.html)` (rational numbers)
+- `[random](https://docs.python.org/3/library/random.html)` (generate pseudo-random numbers)
+- `[statistics](https://docs.python.org/3/library/statistics.html)` (mathematical statistics functions)
 
-What specific modules does it contain
+Or one of the other modules (starting with "Numeric and Mathematical Modules") on the [Python Standard Library](https://docs.python.org/3/library/) page.
 
-How would we import it into a program
+Q6B: Explore the Python documentation (and other materials as needed) to address the following questions:
+- What is this module designed to do, or what kinds of tasks does it support?
+- What are some of the specific functions contained in this module?
+- How would we import this module into a Python program? 
+- How would we import specific functions from this module into a Python program?
 
-Write a program that uses functions/arguments from the module
+NOTE: The last two items (importing the module, importing functions from the module) involve a code component. Your answer for these items should include a Python program + comments that document process and explain your code.
 
-Packages that folks could chose from:
-- Statistics
-- Random
-- If you hate yourself, SportsDB
-
-
-QX: Why would we use functions, value of functions. Relationship to code reuse/modularity.
+Q7: Describe in your own words the value or utility of functions, particularly in relation to the concepts of code reuse and modularity.
+- NOTE: You are welcome to include code as part of this answer, but a code component is not required.
 
 ## How to submit this lab (and show your work)
 
@@ -685,10 +671,48 @@ What gets submitted as the lab notebook is the `Lab_Notebook_Walden.py` file.
 
 # Lab Notebook Questions
 
-[Click here]() to make a copy of the Replit template for this lab.
+[Click here](https://replit.com/team/eoc-f22/Functions-in-Python) to make a copy of the Replit template for this lab.
 
 Alternatives:
 - [`.py` template]() (Google Drive, ND users)
 - [Jupyter Notebook, `.ipynb`]() (Google Colab, ND users)
 
+Q1A: Describe how you would start building out a program to accomplish this task (print a string a specific number of times)? What functions, statements, or keywords would you need to use? How would you start to organize this program?
 
+Q1B: See where you can get with writing this program. What parts of the program were you able to get working? Where did you run into challenges? Answer to this question includes program + comments that document process and explain your code.
+
+Q1C: How does the sample program compare to your approach? What was similar? What was different? How are you thinking differently (if at all) about how to approach this type of program?
+
+Q2A: Modify the program you built for the previous section of the lab to take specific values as inputs (rather than get inputs as part of the function). Answer to this question includes program + comments that document process and explain your code.
+
+Q2B: Then, create a named function and function call for this program. Answer to this question includes program + comments that document process and explain your code.
+
+Q2C: What parts of the program were you able to get working? Where did you run into challenges?
+
+Q3: Write a function is_even that determines whether or not a number n is even. Include the function definition as well as a sample function call. Answer to this question includes program + comments that document process and explain your code.
+
+Q4: Write a function average that determines the average value of a list. Include the function definition as well as a sample function call. Answer to this question includes program + comments that document process and explain your code.
+
+Q5: Write a function uniq that takes a list and returns a new list containing only unique values. Include the function definition as well as a sample function call. Answer to this question includes program + comments that document process and explain your code.
+
+Q6A: Select one of the following Python modules to explore:
+- `[numbers](https://docs.python.org/3/library/numbers.html)` (numeric abstract base classes)
+- `[math](https://docs.python.org/3/library/math.html)` (mathematical functions)
+- `[cmath](https://docs.python.org/3/library/cmath.html)` (mathematical functions for complex numbers)
+- `[decimal](https://docs.python.org/3/library/decimal.html)` (decimal fixed point and floating arithmetic)
+- `[fractions](https://docs.python.org/3/library/fractions.html)` (rational numbers)
+- `[random](https://docs.python.org/3/library/random.html)` (generate pseudo-random numbers)
+- `[statistics](https://docs.python.org/3/library/statistics.html)` (mathematical statistics functions)
+
+Or one of the other modules (starting with "Numeric and Mathematical Modules") on the [Python Standard Library](https://docs.python.org/3/library/) page.
+
+Q6B: Explore the Python documentation (and other materials as needed) to address the following questions:
+- What is this module designed to do, or what kinds of tasks does it support?
+- What are some of the specific functions contained in this module?
+- How would we import this module into a Python program? 
+- How would we import specific functions from this module into a Python program?
+
+NOTE: The last two items (importing the module, importing functions from the module) involve a code component. Your answer for these items should include a Python program + comments that document process and explain your code.
+
+Q7: Describe in your own words the value or utility of functions, particularly in relation to the concepts of code reuse and modularity.
+- NOTE: You are welcome to include code as part of this answer, but a code component is not required.
