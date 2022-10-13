@@ -124,7 +124,7 @@ We call built-in functions using the function name, followed by parenthesis.
 - `len()`
 
 When we call one of these built-in functions, Python accesses and then executes the funtion's source code stored elsewhere in the Python environment.
-- For example, you can see the source code for the `print()` function, contained in `[bltinmodule.c](https://github.com/python/cpython/blob/main/Python/bltinmodule.c#L1972)` file in Python's [source code](https://github.com/python/cpython/blob/).
+- For example, you can see the source code for the `print()` function, contained in [bltinmodule.c](https://github.com/python/cpython/blob/main/Python/bltinmodule.c#L1972) file in Python's [source code](https://github.com/python/cpython/blob/).
 
 Using `print()` as an example:
 - The function definition is contained elsewhere in Python's source code
