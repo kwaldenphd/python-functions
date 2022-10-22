@@ -676,7 +676,7 @@ A few preliminary definitions...
 
 Some modules, packages, and libraries are built-in to Python and require no additional installation. Others have to be installed (typically at the command line, or in the terminal) before you can import and use them in a program.
 
-Built-in functions don't require any extra steps to be able to access them in the programming environment. For example, you can see the source code for the `print()` function, contained in Python's `[bltinmodule.c](https://github.com/python/cpython/blob/main/Python/bltinmodule.c#L1972)` file in the [source code](https://github.com/python/cpython/blob/). But all we have to do is use the function name in our program.
+Built-in functions don't require any extra steps to be able to access them in the programming environment. For example, you can see the source code for the `print()` function, contained in Python's [bltinmodule.c](https://github.com/python/cpython/blob/main/Python/bltinmodule.c#L1972) file in the [source code](https://github.com/python/cpython/blob/). But all we have to do is use the function name in our program.
 
 <p align="center"><img src="https://github.com/kwaldenphd/python-functions/blob/main/images/python_package.png?raw=true" width="500"></p>
 
