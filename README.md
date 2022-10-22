@@ -11,6 +11,13 @@ This lab provides an overview of foundational programming concepts in the areas 
 - Named functions in Python
 - Core function components, including definition, arguments, parameters, scoping, and docstrings
 
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=37efcba3-92d5-4e59-a49b-af36012a7807">Lecture/live coding playlist</a></td>
+  </tr>
+  </table>
+
 ## Acknowledgements
 
 When building this lab, the author consulted materials developed by:
@@ -29,6 +36,7 @@ Definitions and explanations in this lab are adapted from Kenneth Leroy Busbee a
 - [Chapter III, Functions](https://press.rebus.community/programmingfundamentals/part/functions/)
 
 # Table of Contents
+- [Lecture & Live Coding](#lecture--live-coding)
 - [Key Concepts](#key-concepts)
 - [Lab Notebook Template](#lab-notebook-template)
 - [Overview](#overview)
@@ -49,6 +57,23 @@ Definitions and explanations in this lab are adapted from Kenneth Leroy Busbee a
 - [Lab Notebook Questions](#lab-notebook-questions)
 
 [Click here](https://colab.research.google.com/drive/18YBJg-hvbohdMlfhLVU1TZBHho-YRYqF?usp=sharing) to access this lab procedure as a Jupyter Notebook.
+
+# Lecture & Live Coding
+
+Throughout this lab, you will see a Panopto icon at the start of select sections.
+
+This icon indicates there is lecture/live coding asynchronous content that accompanies this section of the lab. 
+
+You can click the link in the figure caption to access these materials (ND users only).
+
+Example:
+
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=37efcba3-92d5-4e59-a49b-af36012a7807">Lecture/live coding playlist</a></td>
+  </tr>
+  </table>
 
 ## Key Concepts
 
@@ -104,6 +129,13 @@ Code blocks are one way to think about these discrete parts of a program. A more
 
 # Functions in Python
 
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="[https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=2da7d03c-171e-448b-8a56-ae30013636fe](https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c945bbbe-54fd-45bd-944f-af3601256b1e)">Overview & Built-In Functions</a></td>
+  </tr>
+  </table>
+
 In Python, a function is a named sequence of statements that performs a computation.
 - Key term: *function*
 
@@ -142,6 +174,13 @@ Using `print()` as an example:
   </table>
 
 ## Named Functions
+
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=af62ceb2-1fae-4f11-b4ab-af360125556c">Named Functions</a></td>
+  </tr>
+  </table>
 
 But Python also lets us to create (and name) our own functions.
 - Key term: *named function(s)*
@@ -409,6 +448,13 @@ printThreeTimes(message)
 
 ### Parameters & Scoping
 
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d75236ef-02d8-4d06-bfdf-af3601255f38">Additional Considerations</a></td>
+  </tr>
+  </table>
+
 This modified example introduces a couple of key concepts for working with functions:
 - Inside a function, the arguments are assigned to local variables, or placeholder variables. These local variables are called parameters.
   * Key term: *parameter*
@@ -448,6 +494,13 @@ In short, the placeholder variables (or parameters) we use inside the function d
   </table>
 
 #### Application
+
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=7d4de569-c905-461c-9615-af360126e4e1">Lab Notebook Question 1</a></td>
+  </tr>
+  </table>
 
 Let's say we want to create a function that prints an input string a specific number of times.
 
@@ -508,7 +561,16 @@ But let's say we don't want to use an `input()` statement as part of the functio
 
 <blockquote>Q2C: What parts of the program were you able to get working? Where did you run into challenges?</blockquote>
 
-### Docstrings
+### Additional Function Considerations
+
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d75236ef-02d8-4d06-bfdf-af3601255f38">Additional Considerations</a></td>
+  </tr>
+  </table>
+
+#### Docstrings
 
 We can add comments to a function definition by including a docstring under the function header.
 - Key term: *docstring*
@@ -549,7 +611,7 @@ Multi-line docstrings can be used to provide additional description about the na
 
 <blockquote><a href="https://www.python.org/dev/peps/pep-0257/">Click here</a> to learn more about docstrings in Python, via Python.org documentation.</blockquote>
 
-### Fruitful Versus Void Functions
+#### Fruitful Versus Void Functions
 
 Functions that yield a result are considered fruitful. To output a result, a function uses the `return` statement to pass results back to the function call.
 - Key term: *fruitful function(s)*
@@ -557,7 +619,7 @@ Functions that yield a result are considered fruitful. To output a result, a fun
 Functions that perform a computation but do not yield a result are considered void. By default, the return value for void functions is `None`.
 - Key term: *void function(s)*
 
-#### Comprehension Check
+##### Comprehension Check
 
 <table>
  <tr><td>
@@ -568,6 +630,13 @@ Functions that perform a computation but do not yield a result are considered vo
 
 #### Application
 
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=7d4de569-c905-461c-9615-af360126e4e1">Lab Notebook Questions 3-5</a></td>
+  </tr>
+  </table>
+
 Q3: Write a function is_even that determines whether or not a number n is even. Include the function definition as well as a sample function call. Answer to this question includes program + comments that document process and explain your code.
 
 Q4: Write a function average that determines the average value of a list. Include the function definition as well as a sample function call. Answer to this question includes program + comments that document process and explain your code.
@@ -575,6 +644,13 @@ Q4: Write a function average that determines the average value of a list. Includ
 Q5: Write a function uniq that takes a list and returns a new list containing only unique values. Include the function definition as well as a sample function call. Answer to this question includes program + comments that document process and explain your code.
 
 # Putting It All Together: Why Functions?
+
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=7d4de569-c905-461c-9615-af360126e4e1">Putting It All Together</a></td>
+  </tr>
+  </table>
 
 <p align="center"><img src="https://github.com/kwaldenphd/python-functions/blob/main/images/hulk_antman_meme.png?raw=true" width="500"></p>
 
