@@ -667,6 +667,13 @@ But imagine all kinds of more complex tasks we might want to accomplish in a pro
 
 ## Code Reuse & Modularity (aka a quick detour into modules, packages, and libraries)
 
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e652072c-176a-4490-b7b3-af360164bf8a">Modules, Functions & Libraries</a></td>
+  </tr>
+  </table>
+
 As we move forward in Python, we're going to be encountering the terms `package`, `module`, and `library.` All of these terms refer to external Python programs that we can use in our program without having to recreate the entire original code. We can think of these resources as "expansion packs" for Python that expand or extend the programming language's built-in functionality.
 
 A few preliminary definitions...
