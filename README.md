@@ -670,7 +670,7 @@ But imagine all kinds of more complex tasks we might want to accomplish in a pro
 <table>
  <tr><td>
 <img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
-<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e652072c-176a-4490-b7b3-af360164bf8a">Modules, Functions & Libraries</a></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e652072c-176a-4490-b7b3-af360164bf8a">Modules, Packages & Libraries</a></td>
   </tr>
   </table>
 
