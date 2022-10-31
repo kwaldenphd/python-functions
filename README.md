@@ -252,10 +252,8 @@ Then, elsewhere in our program, we could call that function using its name.
 
 ```Python
 # sample function call
-tempConvert(32)
+tempConvert()
 ```
-
-In this example, we passed the value `32` to the `tempConvert` function we created. 
 
 ### Python Example B
 
